@@ -2,7 +2,7 @@
                     ABOUT
 --------------------------------------------------*/
 #about {
-    background-color: lightgray;
+    background-color: #c8c8c8;
     width: 100%;
     padding-bottom: 20px;
     position: relative;
@@ -23,6 +23,11 @@
     margin-top: 30px;
 }
 
+.about-main h3{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
 .about-icon{
     padding-left: 5px;
     padding-right: 5px;
@@ -33,7 +38,7 @@
 
 #about2 {
     /*font-size: 18px;*/
-    background-color: lightgray;
+    background-color: #c8c8c8;
     width: 100%;
     padding-bottom: 20px;
     position: relative;
@@ -55,13 +60,27 @@
 }
 
 
+
+/*------------------------------------------------
+                    NEWS
+--------------------------------------------------*/
+#news {
+    /*font-size: 18px;*/
+    width: 100%;
+    background-color: #b4b4b4;
+    position: relative;
+    z-index: 400;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
 /*------------------------------------------------
                     EDUCATION
 --------------------------------------------------*/
 #education {
     /*font-size: 18px;*/
     width: 100%;
-    background-color: #a0a0a0;
+    background-color: #b4b4b4;
     position: relative;
     z-index: 400;
     padding-bottom: 20px;
@@ -90,7 +109,7 @@
 #profssional {
     /*font-size: 18px;*/
     width: 100%;
-    background-color: #dcdcdc;
+    background-color: #c8c8c8;
     position: relative;
     z-index: 400;
     padding-bottom: 60px;
@@ -132,7 +151,7 @@
 #publications {
     /*font-size: 18px;*/
     width: 100%;
-    background-color: #b4b4b4;
+    background-color: #c8c8c8;
     position: relative;
     z-index: 400;
     text-align: left;
