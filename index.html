@@ -4,100 +4,101 @@
 		<title>Ondřej Texler</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jQuery library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> <!-- Popper JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
+		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<script src="js/script.js"></script>
+		
 	</head>
-	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+	<body data-spy="scroll" data-target="#navbarContent" data-offset="60">
 
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>                        
-			  </button>
-			  <a class="navbar-brand" href="#myPage">Ondřej Texler</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom py-0">
+			<div class="container">
+				<a class="navbar-brand py-3" href="#">Ondřej Texler</a>
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<div class="nav navbar-nav ml-auto">
+						<a class="nav-item nav-link py-3" href="#bio">ABOUT ME</a>
+						<a class="nav-item nav-link py-3" href="#news">NEWS</a>
+						<a class="nav-item nav-link py-3" href="#publications">PUBLICATIONS</a>
+						<a class="nav-item nav-link py-3" href="#education">EDUCATION</a>
+						<a class="nav-item nav-link py-3" href="#profession">PROFESSIONAL EXPERIENCE</a>
+					</div>
+				</div>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="#bio">SHORT BIO</a></li>
-				<li><a href="#news">NEWS</a></li>
-				<li><a href="#publications">PUBLICATIONS</a></li>
-				<li><a href="#education">EDUCATION</a></li>
-				<li><a href="#profession">PROFESSIONAL EXPERIENCE</a></li>
-			  </ul>
-			</div>
-		  </div>
 		</nav>
 
-		<div class="jumbotron text-center">
+
+		<div class="jumbotron jumbotron-fluid text-center bg-dark text-light mb-0">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<img class="img-responsive img-rounded" src="img/profile_2.jpg">
-					</div>
-					<div class="col-sm-8">
-						<div class="row">
-							<h1>Ondřej Texler</h1> 
-							<p>PhD student and Researcher</p>
-							<p><a class="my-link" href="http://dcgi.fel.cvut.cz/?lang=en&do=lang" target="_blank"><span class="fas fa-external-link-alt"></span> Department of Computer Graphics and Interactions</a>
-							<br><a class="my-link" href="https://www.cvut.cz/en" target="_blank"><span class="fas fa-external-link-alt"></span> Czech Technical University in Prague</a> </p>
-							<p><a class="my-link" href = "mailto: ondrej.texler@gmail.com" style="text-decoration: none"><span class="fas fa-envelope"></span> ondrej.texler@gmail.com</a>
-							<br><span class="fas fa-mobile-alt"></span> +420 732 665 908</p>
+			
+				<div class="card border-dark bg-dark shadow-lg mx-auto" style="max-width: 800px;">
+					<div class="row no-gutters align-items-center">
+					
+						<div class="col-md-5">
+						  <img src="img/profile_2.jpg" class="card-img" alt="img">
 						</div>
-						<div class="row">
-							<div class="col-sm-4"></div>
-							<div class="col-sm-1">
-								<a href="https://ondrejtexler.github.io/res/Texler-CV.pdf" target="_blank" ><img class="img-responsive about-icon-scale" src="img/about_icon_cv.png" style="max-width: 30px"></a>
-							</div>
-							<div class="col-sm-1">
-								<a href="https://www.linkedin.com/in/ondrej-texler/" target="_blank"><img class="img-responsive about-icon-scale" src="img/about_icon_linkedin.png" style="max-width: 30px"></a>
-							</div>
-							<div class="col-sm-1">
-								<a href="https://github.com/OndrejTexler" target="_blank"><img class="img-responsive about-icon-scale" src="img/about_icon_github.png" style="max-width: 30px"></a>
-							</div>
-							<div class="col-sm-1">
-								<a href="https://www.facebook.com/ondrej.texler" target="_blank"><img class="img-responsive about-icon-scale" src="img/about_icon_fb.png" style="max-width: 30px"></a>
+						
+						<div class="col-md-7">
+							<div class="card-body">
+								<h1 class="card-title">Ondřej Texler</h1>
+								<p class="card-text font-italic">PhD Student and Researcher</p>
+								<p class="card-text"><a class="text-reset" href="http://dcgi.fel.cvut.cz/?lang=en&do=lang" target="_blank"><i class="fas fa-external-link-alt"></i> Department of Computer Graphics and Interactions</a>
+									<br><a class="text-reset" href="https://www.cvut.cz/en" target="_blank"><i class="fas fa-external-link-alt"></i> Czech Technical University in Prague</a></p>
+								<p class="card-text"><a class="text-reset" href="mailto: ondrej.texler@gmail.com"><i class="fas fa-envelope"></i> ondrej.texler@gmail.com</a>
+									<br><i class="fas fa-mobile-alt"></i> +420 732 665 908</p>
+								<div class="row justify-content-center">
+									<a class="card-link" href="https://ondrejtexler.github.io/res/Texler-CV.pdf" target="_blank" ><img class="icon-scale" src="img/cv.png" style="height:27px"></a>
+									<a class="card-link" href="https://www.linkedin.com/in/ondrej-texler/" target="_blank"><i class="fab fa-linkedin icon-scale" style="font-size:30px;color:#0e76a8"></i></a>
+									<a class="card-link" href="https://github.com/OndrejTexler" target="_blank"><i class="fab fa-github icon-scale" style="font-size:30px;color:white"></i></a>
+									<a class="card-link" href="https://www.facebook.com/ondrej.texler" target="_blank"><i class="fab fa-facebook-square icon-scale" style="font-size:30px;color:#3b5998"></i></a>
+								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Container (Short Bio Section) -->
+		
+		
+		<!-- Container (About Me Section) -->
 		<div id="bio" class="container-fluid">
-			<div class="container">
+			<div class="container py-5">
 				<div class="row">
-					<div class="col-sm-8">
-						<h2>Short Bio</h2>
+					<div class="col-md-8 pb-4 pb-md-0">
+						<h2 class="text-center text-md-left">Short Bio</h2>					
 						<p>I am a second-year PhD student at the
-							<a href="http://dcgi.fel.cvut.cz/?lang=en&do=lang" target="_blank">Department of Computer Graphics and Interaction</a>,
-							<a href="https://www.cvut.cz/en" target="_blank">Czech Technical University in Prague</a> supervised by 
-							<a href="http://dcgi.fel.cvut.cz/home/sykorad/" target="_blank"> prof. Daniel Sýkora </a>. I received my 
+							<a href="http://dcgi.fel.cvut.cz/?lang=en&amp;do=lang" target="_blank" class="my-link">Department of Computer Graphics and Interaction</a>,
+							<a href="https://www.cvut.cz/en" target="_blank" class="my-link">Czech Technical University in Prague</a> supervised by 
+							<a href="http://dcgi.fel.cvut.cz/home/sykorad/" target="_blank" class="my-link"> prof. Daniel Sýkora </a>. I received my 
 							BSc and MSc degrees from Software Engineering at the same university. My primary research interest lies in computer graphics,
 							image processing, computer vision, and deep learning; with focus on computer-assisted stylization and style transfer. 
 							Currently, I am in Santa Monica, Los Angeles, California, doing research with 
-							<a href="https://www.snap.com/en-US/" target="_blank"> Snap Inc.</a> In recent years, 
+							<a href="https://www.snap.com/en-US/" target="_blank" class="my-link"> Snap Inc.</a> In recent years, 
 							I have been working with Adobe Research on several publications and research-engineering projects; and I was granted the opportunity to
 							join them as a research scientist intern in San Jose, California (2017) and then in Seattle, Washington (2018).
-						</p><br>
+						</p>
 					</div>
-					<div class="col-sm-4">
-						<h2>Research Interests</h2>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Computer Graphics</li>
-							<li class="list-group-item">Image Generation</li>
-							<li class="list-group-item">Computer Vision</li>
-							<li class="list-group-item">Deep Learning</li>
-						</ul>
+					<div class="col-md-4">
+						<h2 class="text-center">Research Interests</h2>
+						<div class="container">
+							<ul class="list-group list-group-flush text-center">
+								<li class="list-group-item">Computer Graphics</li>
+								<li class="list-group-item">Image Generation</li>
+								<li class="list-group-item">Computer Vision</li>
+								<li class="list-group-item">Deep Learning</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -105,344 +106,247 @@
 
 		<!-- Container (News Section) -->
 		<div id="news" class="container-fluid bg-grey">
-			<div class="container">
-				<h2>News</h2>
+			<div class="container py-5">
 				<div class="row">
-					<div class="col-sm-10">
+					<div class="col">
+						<h2 class="text-center text-md-left">News</h2>
 						<ul>
-							<li><strong>[4/2019]: </strong>For Summer/Fall 2019 I will join <strong><a href="https://www.snap.com" target="_blank">Snap Research</a></strong> at Santa Monica, Los Angeles, CA. For Winter 2019/2020 and Spring 2020 I am still available and open to internship opportunities, please, let me know!</li>
-							<li><strong>[4/2019]: </strong>Paper <strong>Stylizing Video by Example</strong> has been accepted to <strong><a href="https://s2019.siggraph.org/">SIGGRAPH 2019</a></strong>, Los Angeles, CA.</li>
-							<li><strong>[4/2019]: </strong>On 5-May I am presenting <strong>Enhancing Neural Style Transfer using Patch-Based Synthesis</strong> at <strong><a href="http://expressive.graphics/2019/" target="_blank">Expressive 2019</a></strong>, Genoa, Italy.</li>
-							<li><strong>[3/2019]: </strong>On 6-May I am presenting <strong>Fast Example-Based Stylization with Local Guidance</strong> at <strong><a href="https://www.eurographics2019.it/" target="_blank">EuroGraphics 2019</a></strong>, Genoa, Italy.</li>
+							<li><strong>[4/2019]: </strong>For Summer/Fall 2019 I will join <a href="https://www.snap.com" target="_blank" class="my-link">Snap Research</a> at Santa Monica, Los Angeles, CA. For Winter 2019/2020 and Spring 2020 I am still available and open to internship opportunities, please, let me know!</li>
+							<li><strong>[4/2019]: </strong>Paper <strong>Stylizing Video by Example</strong> has been accepted to <a href="https://s2019.siggraph.org/" class="my-link">SIGGRAPH 2019</a>, Los Angeles, CA.</li>
+							<li><strong>[4/2019]: </strong>On 5-May I am presenting <strong>Enhancing Neural Style Transfer using Patch-Based Synthesis</strong> at <a href="http://expressive.graphics/2019/" target="_blank" class="my-link">Expressive 2019</a>, Genoa, Italy.</li>
+							<li><strong>[3/2019]: </strong>On 6-May I am presenting <strong>Fast Example-Based Stylization with Local Guidance</strong> at <a href="https://www.eurographics2019.it/" target="_blank" class="my-link">EuroGraphics 2019</a>, Genoa, Italy.</li>
 						</ul>
-					</div>
-					<div class="col-sm-2">
-						<span class="fas fa-calendar-alt logo slideanim"></span>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
+		
 		<!-- Container (Publictions Section) -->
 		<div id="publications" class="container-fluid">
-			<div class="container">
-				<h2>Publications</h2>
+			<div class="container py-5">
+				<h2 class="text-center text-md-left">Publications</h2>
 				
-				<div class="row">	
-					<div class="col-sm-4"> 
-						<img class="img-responsive" src="img/paper_image_StylizingVideoByExample.png"><br>
-					</div>
-					<div class="col-sm-8">
-						<div class="row">
-							<p>O. Jamriška, Š. Sochorová, <strong>O. Texler</strong>, M. Lukáč, J. Fišer, J. Lu, E. Shechtman, and D. Sýkora:
-							<strong>Stylizing Video by Example.</strong>
-							<em>Siggraph, Los Angeles, California, July 2019.</em>
-							</p>
-							<p>[To appear]</p>
+				<div class="card mb-4 shadow">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+						  <img src="img/paper_image_StylizingVideoByExample.png" class="card-img" alt="img">
+						</div>
+						<div class="col-md-8">
+						  <div class="card-body">
+							<h4 class="card-title mb-4">Stylizing Video by Example</h4>
+							<p class="card-text mb-1">O. Jamriška, Š. Sochorová, <strong>O. Texler</strong>, M. Lukáč, J. Fišer, J. Lu, E. Shechtman, and D. Sýkora</p>
+							<p class="card-text mb-4"><em>Siggraph, Los Angeles, California, July 2019.</em></p>
+						  </div>
 						</div>
 					</div>
-				</div>	
+				</div>
 				
-				<div class="row">	
-					<div class="col-sm-4"> 
-						<img class="img-responsive" src="img/paper_image_Enhancing.png"><br>
-					</div>
-					<div class="col-sm-8">
-						<div class="row">
-							<p><strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora:
-							<strong>Enhancing Neural Style Transfer using Patch-Based Synthesis.</strong>
-							In <em>Proceedings of the 8th ACM/EG Expressive Symposium, pp. 43–50,</em> Expressive 2019, Genoa, Italy, May 2019.
-							</p>
-							<p><a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural.html" target="_blank"><span class="fas fa-globe"></span> Project Page</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pdf" target="_blank"><span class="fas fa-file-pdf"></span> Paper</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural-supp/index.html" target="_blank"><span class="fas fa-globe"></span> Interactive Supplementary</a></p>
-							<p><a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pptx" target="_blank"><span class="far fa-file-powerpoint"></span> Presentation </a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.bib" target="_blank"><span class="fas fa-book"></span> BibTeX </a></p>
+				<div class="card mb-4 shadow">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+						  <img src="img/paper_image_Enhancing.png" class="card-img" alt="img">
+						</div>
+						<div class="col-md-8">
+						  <div class="card-body">
+							<h4 class="card-title mb-4">Enhancing Neural Style Transfer using Patch-Based Synthesis</h4>
+							<p class="card-text mb-1"><strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora</p>
+							<p class="card-text mb-4"><em>Expressive, Genoa, Italy, May 2019.</em></p>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural.html" target="_blank" class="card-link my-link"><i class="fas fa-globe"></i> Project Page</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pdf" target="_blank" class="card-link my-link"><i class="fas fa-file-pdf"></i> Paper</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural-supp/index.html" target="_blank" class="card-link my-link"><i class="fas fa-globe"></i> Interactive Supplementary</a>
+							<br>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pptx" target="_blank" class="card-link my-link"><i class="fas fa-file-powerpoint"></i> Presentation </a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.bib" target="_blank" class="card-link my-link"><i class="fas fa-book"></i> BibTeX </a>
+						  </div>
 						</div>
 					</div>
-				</div>	
+				</div>
 				
-				<div class="row">	
-					<div class="col-sm-4"> 
-						<img class="img-responsive" src="img/paper_image_StyleBlit.jpg"><br>
-					</div>
-					<div class="col-sm-8">
-						<div class="row">
-							<p>D. Sýkora, O. Jamriška, <strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu and E. Shechtman:
-							<strong>StyleBlit: Fast Example-Based Stylization with Local Guidance.</strong>
-							In <em>Comuter Graphics Forum 38(2):83–91,</em> Eurographics 2019, Genoa, Italy, May 2019.
-							</p>
-							<p><a href="https://dcgi.fel.cvut.cz/home/sykorad/styleblit.html" target="_blank"><span class="fas fa-globe"></span> Project Page</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pdf" target="_blank"><span class="fas fa-file-pdf"></span> Paper</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG_supp.pdf" target="_blank"><span class="fas fa-file-pdf"></span> Supplementary</a></p>
-							<p><a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pptx" target="_blank"><span class="far fa-file-powerpoint"></span> Presentation</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="https://github.com/jamriska/styleblit" target="_blank"><span class="fab fa-github"></span> GitHub</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/StyleBlit/unity_plugin.zip" target="_blank"><span class="fas fa-gamepad"></span> Unity3D Asset</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.bib" target="_blank"><span class="fas fa-book"></span> BibTeX</a>
-							</p>
+				<div class="card mb-4 shadow">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+						  <img src="img/paper_image_StyleBlit.jpg" class="card-img" alt="img">
+						</div>
+						<div class="col-md-8">
+						  <div class="card-body">
+							<h4 class="card-title mb-4">StyleBlit: Fast Example-Based Stylization with Local Guidance</h4>
+							<p class="card-text mb-1">D. Sýkora, O. Jamriška, <strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu and E. Shechtman</p>
+							<p class="card-text mb-4"><em>Eurographics, Genoa, Italy, May 2019.</em></p>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/styleblit.html" target="_blank" class="card-link my-link"><i class="fas fa-globe"></i> Project Page</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pdf" target="_blank" class="card-link my-link"><i class="fas fa-file-pdf"></i> Paper</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG_supp.pdf" target="_blank" class="card-link my-link"><i class="fas fa-file-pdf"></i> Supplementary</a>
+							<br>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pptx" target="_blank" class="card-link my-link"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+							<a href="https://github.com/jamriska/styleblit" target="_blank" class="card-link my-link"><i class="fab fa-github"></i> GitHub</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/StyleBlit/unity_plugin.zip" target="_blank" class="card-link my-link"><i class="fas fa-gamepad"></i> Unity3D Asset</a>
+							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.bib" target="_blank" class="card-link my-link"><i class="fas fa-book"></i> BibTeX</a>
+						  </div>
 						</div>
 					</div>
-				</div>	
+				</div>
 				
-				<div class="row">	
-					<div class="col-sm-4"> 
-						<img class="img-responsive" src="img/paper_image_StylizationNavigationMaps.jpg"><br>
-					</div>
-					<div class="col-sm-8">
-						<div class="row">
-							<p><strong>O. Texler</strong> and D. Sýkora:
-							<strong>Example-Based Stylization of Navigation Maps on Mobile Devices.</strong>
-							In<em> Proceedings of the 22nd Central European Seminar on Computer Graphics</em>, (CESCG, Smolenice, Slovakia, 2018).
-							</p>
-							<p><a href="https://cescg.org/wp-content/uploads/2018/04/Texler-Example-Based-Stylization-of-Navigation-Maps-on-Mobile-Devices-3.pdf" target="_blank"><span class="fas fa-file-pdf"></span> Paper</a></p>
+				<div class="card mb-4 shadow">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+						  <img src="img/paper_image_StylizationNavigationMaps.jpg" class="card-img" alt="img">
+						</div>
+						<div class="col-md-8">
+						  <div class="card-body">
+							<h4 class="card-title mb-4">Example-Based Stylization of Navigation Maps on Mobile Devices</h4>
+							<p class="card-text mb-1"><strong>O. Texler</strong> and D. Sýkora</p>
+							<p class="card-text mb-4"><em>CESCG, Smolenice, Slovakia, 2018.</em></p>
+							<a href="https://cescg.org/wp-content/uploads/2018/04/Texler-Example-Based-Stylization-of-Navigation-Maps-on-Mobile-Devices-3.pdf" target="_blank" class="card-link my-link"><i class="fas fa-file-pdf"></i> Paper</a>
+						  </div>
 						</div>
 					</div>
-				</div>	
+				</div>
 				
 			</div>
-		</div>
+		</div>	
+		
 
 		<!-- Container (Education Section) -->
 		<div id="education" class="container-fluid bg-grey">
-			<div class="container">
-				<h2>Education</h2>
-				<div class="row">
-					<div class="col-sm-10">
-						
-						<div class="row">	
-							<div class="col-sm-12"> 
-								<div class="row">
-									<div class="col-sm-9">
-										<h4 style="margin-bottom: 10px">Doctoral degree study (PhD)</h4>
-									</div>
-									<div class="col-sm-3 text-right">
-										<h4 style="margin-bottom: 10px">2018 &#8210 present</h4>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<p>Computer Graphics, Faculty of Electrical Engineering, Czech Technical University in Prague. Dissertation Thesis: Example-based Stylization.</p>
-									</div>
-								</div>
-							</div>
-						</div>	
-						
-						<div class="row">	
-							<div class="col-sm-12"> 
-								<div class="row">
-									<div class="col-sm-9">
-										<h4 style="margin-bottom: 10px">Master degree study (MSc)</h4>
-									</div>
-									<div class="col-sm-3 text-right">
-										<h4 style="margin-bottom: 10px">2016 &#8210 2018</h4>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<p>Software Engineering, Faculty of Information Technology, Czech Technical University in Prague.
-										Master Thesis: Digital Image Processing and Image Stylization.</p>
-									</div>
-								</div>
-							</div>
-						</div>	
-						
-						<div class="row">	
-							<div class="col-sm-12"> 
-								<div class="row">
-									<div class="col-sm-9">
-										<h4 style="margin-bottom: 10px">Bachelor degree study (BSc)</h4>
-									</div>
-									<div class="col-sm-3 text-right">
-										<h4 style="margin-bottom: 10px">2012 &#8210 2015</h4>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<p>Software Engineering, Faculty of Information Technology, Czech Technical University in Prague.
-										Bachelor Thesis: Architecture design and implementation of a large software system.</p>
-									</div>
-								</div>
-							</div>
-						</div>	
-						
-						<div class="row">	
-							<div class="col-sm-12"> 
-								<div class="row">
-									<div class="col-sm-9">
-										<h4 style="margin-bottom: 10px">High school</h4>
-									</div>
-									<div class="col-sm-3 text-right">
-										<h4 style="margin-bottom: 10px">2004 &#8210 2012</h4>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<p>Mathematics, Physics, and Descriptive Geometry specialization, Gymnasium of Christian Doppler.</p>
-									</div>
-								</div>
-							</div>
-						</div>	
-					</div>
-					<div class="col-sm-2">
-						<span class="fas fa-user-graduate logo slideanim"></span>
-					</div>
+			<div class="container py-5">
+				<h2 class="text-center text-md-left">Education</h2>
+				
+				<div class="clearfix">
+					<span class="float-left"><h4 class="mb-1">Doctoral degree study (PhD)</h4></span>
+					<span class="float-right"><h4 class="mb-1">2018 &#8210 present</h4></span>
 				</div>
+				<p>Computer Graphics, Faculty of Electrical Engineering, Czech Technical University in Prague. Dissertation Thesis: Example-based Stylization.</p>
+				<hr>
+				
+				<div class="clearfix">
+					<span class="float-left"><h4 class="mb-1">Master degree study (MSc)</h4></span>
+					<span class="float-right"><h4 class="mb-1">2016 &#8210 2018</h4></span>
+				</div>
+				<p>Software Engineering, Faculty of Information Technology, Czech Technical University in Prague. Master Thesis: Digital Image Processing and Image Stylization.</p>
+				<hr>
+				
+				<div class="clearfix">
+					<span class="float-left"><h4 class="mb-1">Bachelor degree study (BSc)</h4></span>
+					<span class="float-right"><h4 class="mb-1">2012 &#8210 2015</h4></span>
+				</div>
+				<p>Software Engineering, Faculty of Information Technology, Czech Technical University in Prague. Bachelor Thesis: Architecture design and implementation of a large software system.</p>
+				<hr>
+				
+				<div class="clearfix">
+					<span class="float-left"><h4 class="mb-1">High school</h4></span>
+					<span class="float-right"><h4 class="mb-1">2004 &#8210 2012</h4></span>
+				</div>
+				<p>Mathematics, Physics, and Descriptive Geometry specialization, Gymnasium of Christian Doppler.</p>	
+				
 			</div>
 		</div>
-
+		
+		
+		
 		<!-- Container (Professional Experience Section) -->
 		<div id="profession" class="container-fluid">
-			<div class="container">
-				<h2>Professional Experience</h2>
+			<div class="container py-5">
+				<h2 class="text-center text-md-left">Professional Experience</h2>
+				
+		
 				<div class="row">	<!-- ----- SNAP ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Intern Research Scientist, Snap Inc., Los Angeles, California</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>7/2019 &#8210 present</h4>
-							</div>
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Intern Research Scientist, Snap Inc., Los Angeles, California</h4>
+							<h4 class="float-right mb-1">7/2019 &#8210 present</h4>
 						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Research & Development.</em> Combining generative adversarial networks and patch-based style transfer methods.</p>
-							</div>
-						</div>
+						<p><em>Research & Development.</em> Combining generative adversarial networks and patch-based style transfer methods.</p>
 					</div>
-					<div class="col-sm-2 text-center">
-						<img class="img-responsive" src="img/professional_logo_snap.png"><br>
-					</div>
-				</div>	
-				
-				<div class="row">	<!-- ----- ADOBE REMOTE ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Remote Collaboration, Adobe Research, USA</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>9/2017 &#8210 present</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Research & Development.</em> Remote collaboration on several research projects, publications, and tech
-								transfer project. Computer graphics; patch-based style transfer; neural-network-based style transfer.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2 text-center">
-						<img class="img-responsive" src="img/professional_logo_adobe.jpg"><br>
-					</div>
-				</div>	
-				
-				<div class="row">	<!-- ----- ADOBE SEATTLE ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Intern Research Scientist, Adobe Research, Seattle, Washington</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>7/2018 &#8210 10/2018</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Research & Development.</em> Combining neural-network-based and patch-based style transfer methods.
-								Chunk-based style transfer method with focus on a real-time performance.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2 text-center">
-						<img class="img-responsive" src="img/professional_logo_adobe.jpg"><br>
-					</div>
-				</div>	
-				
-				<div class="row">	<!-- ----- ADOBE SAN JOSE ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Intern Research Scientist, Adobe Research, San Jose, California</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>9/2017 &#8210 12/2017</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Research & Development.</em> Guiding patch-based style transfer method using convolutional neural networks,
-								image harmonization, and histogram optimization. Integrating developed style transfer method
-								into Adobe Photoshop.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2 text-center">
-						<img class="img-responsive" src="img/professional_logo_adobe.jpg"><br>
-					</div>
-				</div>	
-				
-				<div class="row">	<!-- ----- DYNAVIX ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Software Architect and Developer, Dynavix, Prague, Czechia</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>5/2014 &#8210 9/2017</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Software Architecture & Development.</em> The navigation application for smartphones, tablets, and PND
-								devices. C++, Java (Android), JavaEE, Objective-C (iOS), C#.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2 center-block">
-						<img class="img-responsive" src="img/professional_logo_dynavix.jpg"><br>
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_snap.png" style="max-width:70%"><br>
 					</div>
 				</div>
 				
-				<div class="row">	<!-- ----- ANATHEMA ----- -->
-					<div class="col-sm-10"> 
-						<div class="row">
-							<div class="col-sm-9">
-								<h4>Software Developer, World of Warcraft game server, Prague, Czechia</h4>
-							</div>
-							<div class="col-sm-3 text-right">
-								<h4>2/2013 &#8210 5/2014</h4>
-							</div>
+				<hr>
+				
+				<div class="row">	<!-- ----- ADOBE REMOTE ----- -->
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Remote Collaboration, Adobe Research, USA</h4>
+							<h4 class="float-right mb-1">9/2017 &#8210 present</h4>
 						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<p><em>Software & Database Development.</em> The World of Warcraft game server. Extending game mechanics,
-								scripting artificial intelligence, data-mining. C++, C#.</p>
-							</div>
-						</div>
+						<p><em>Research & Development.</em> Remote collaboration on several research projects, publications, and tech transfer project. Computer graphics; patch-based style transfer; neural-network-based style transfer.</p>
 					</div>
-					<div class="col-sm-2 text-center">
-						<img class="img-responsive" src="img/professional_logo_wow.png">
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_adobe.jpg" style="max-width:70%"><br>
+					</div>
+				</div>	
+				
+				<hr>
+				
+				<div class="row">	<!-- ----- ADOBE SEATTLE ----- -->
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Intern Research Scientist, Adobe Research, Seattle, Washington</h4>
+							<h4 class="float-right mb-1">7/2018 &#8210 10/2018</h4>
+						</div>
+						<p><em>Research & Development.</em> Combining neural-network-based and patch-based style transfer methods. Chunk-based style transfer method with focus on a real-time performance.</p>
+					</div>
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_adobe.jpg" style="max-width:70%"><br>
+					</div>
+				</div>	
+				
+				<hr>
+				
+				<div class="row">	<!-- ----- ADOBE SAN JOSE ----- -->
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Intern Research Scientist, Adobe Research, San Jose, California</h4>
+							<h4 class="float-right mb-1">9/2017 &#8210 12/2017</h4>
+						</div>
+						<p><em>Research & Development.</em> Guiding patch-based style transfer method using convolutional neural networks, image harmonization, and histogram optimization. Integrating developed style transfer method	into Adobe Photoshop.</p>
+					</div>
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_adobe.jpg" style="max-width:70%"><br>
+					</div>
+				</div>	
+				
+				<hr>
+				
+				<div class="row">	<!-- ----- DYNAVIX ----- -->
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Software Architect and Developer, Dynavix, Prague, Czechia</h4>
+							<h4 class="float-right mb-1">5/2014 &#8210 9/2017</h4>
+						</div>
+						<p><em>Software Architecture & Development.</em> The navigation application for smartphones, tablets, and PND devices. C++, Java (Android), JavaEE, Objective-C (iOS), C#.</p>
+					</div>
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_dynavix.jpg" style="max-width:70%"><br>
+					</div>
+				</div>
+				
+				<hr>
+				
+				<div class="row">	<!-- ----- ANATHEMA ----- -->
+					<div class="col-sm-10">
+						<div class="clearfix">
+							<h4 class="float-left mb-1">Software Developer, World of Warcraft game server, Prague, Czechia</h4>
+							<h4 class="float-right mb-1">2/2013 &#8210 5/2014</h4>
+						</div>
+						<p><em>Software & Database Development.</em> The World of Warcraft game server. Extending game mechanics, scripting artificial intelligence, data-mining. C++, C#.</p>
+					</div>
+					<div class="col-sm-2 text-center text-md-right">
+						<img class="img-fluid" src="img/professional_logo_wow.png" style="max-width:70%"><br>
 					</div>
 				</div>
 
 			</div>
 		</div>
 
-		<!-- Image of location/map -->
-		<footer class="container-fluid text-center">
-		  <a href="#myPage" title="To Top">
-			<span class="glyphicon glyphicon-chevron-up"></span>
-		  </a>
+		<!-- Footer -->
+		<footer class="container-fluid text-center my-4">
+			<a href="#" title="To Top">
+				<i class="fas fa-chevron-up text-dark icon-scale" style="font-size:30px"></i>
+			</a>
 		</footer>
+		
 
 	</body>
 </html>
