@@ -10,7 +10,7 @@ body {
 	position: relative;
 	overflow-y: auto;
 	/*padding-top: 3rem;*/
-	padding-top: 60px;
+	margin-top: 60px; /* make space for the navbar */
 }
 	
 h2 {
@@ -19,6 +19,10 @@ h2 {
 	color: #303030;
 	font-weight: 600;
 	margin-bottom: 30px;
+	
+	/* adjust position for scroll spy */
+	padding-top: 80px;
+    margin-top: -60px;
 }
 
 h4 {
@@ -78,12 +82,12 @@ a.my-link {
     color: #b4e61d;
 }
 
-/* hidden spacer before sections for proper offset */
+/* hidden spacer before sections for proper offset 
 h2:before {
     height: 60px;
     content: "";
 	display:block;
-}
+}*/
 
 /*hr {
 	border: 0;
