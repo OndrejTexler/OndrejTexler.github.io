@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>FaceBlit</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-white">
+
+	<div class="container text-center">
+	
+		<img class="img-fluid" src="img/logo.png" alt="FaceBlit">
+		<h4 class="text-muted font-italic">Example-Based Portrait Stylization on Mobile Devices</h4>
+		<div class="row py-4">
+			<div class="col-1 col-md-2"></div>
+			<div class="col-5 col-md-4">
+				<h5><a href="https://www.linkedin.com/in/aneta-moravcova" target="_blank" class="my-link">A. Moravcová</a></h5>
+				<p class="text-muted">CTU in Prague, FIT</p>
+			</div>
+			<div class="col-5 col-md-4">
+				<h5><a href="https://ondrejtexler.github.io" target="_blank" class="my-link">O. Texler</a></h5>
+				<p class="text-muted">CTU in Prague, FEE</p>
+			</div>
+			<div class="col-1 col-md-2"></div>
+		</div>
+		
+		
+		<!--Carousel Wrapper-->
+		<div id="video-carousel" class="carousel slide carousel-fade z-depth-2 rounded" data-ride="carousel">
+			<!--Indicators-->
+			<ol class="carousel-indicators">
+				<li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#video-carousel" data-slide-to="1"></li>
+				<li data-target="#video-carousel" data-slide-to="2"></li>
+				<li data-target="#video-carousel" data-slide-to="3"></li>
+				<li data-target="#video-carousel" data-slide-to="4"></li>
+			</ol>
+			<!--/.Indicators-->
+			
+			<!--Slides-->
+			<div class="carousel-inner rounded" role="listbox">
+			
+				<!-- 1. slide -->
+				<div class="carousel-item active">
+					<div class="view">
+						<!--Video source-->
+						<video class="video-fluid" autoplay loop muted>
+							<source src="https://dcgi.fel.cvut.cz/home/texleond/tmp/video-1568413403.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<!-- /.1. slide -->
+				
+				<!-- 2. slide -->
+				<div class="carousel-item">
+					<div class="view">		
+						<!--Video source-->
+						<video class="video-fluid" autoplay loop muted>
+							<source src="https://dcgi.fel.cvut.cz/home/texleond/tmp/video-1568575697.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<!-- /.2. slide -->
+
+				<!-- 3. slide -->
+				<div class="carousel-item">
+					<div class="view">
+						<!--Video source-->
+						<video class="video-fluid" autoplay loop muted>
+							<source src="https://dcgi.fel.cvut.cz/home/texleond/tmp/video-1568430283.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<!-- /.3. slide -->
+				
+				<!-- 4. slide -->
+				<div class="carousel-item">
+					<div class="view">
+						<!--Video source-->
+						<video class="video-fluid" autoplay loop muted>
+							<source src="https://dcgi.fel.cvut.cz/home/texleond/tmp/video-1568575703.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<!-- /.4. slide -->
+
+				<!-- 5. slide -->
+				<div class="carousel-item">
+					<div class="view">
+						<!--Video source-->
+						<video class="video-fluid" autoplay loop muted>
+							<source src="https://dcgi.fel.cvut.cz/home/texleond/tmp/video-1568430292.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<!-- /.5. slide -->
+				
+			</div>
+			<!--/.Slides-->
+			
+			<!--Controls-->
+			<a class="carousel-control-prev" href="#video-carousel" role="button" data-slide="prev">
+				<span class="fas fa-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#video-carousel" role="button" data-slide="next">
+				<span class="fas fa-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+			<!--/.Controls-->
+			
+		</div>
+		<!--Carousel Wrapper-->
+		
+		<div class="row text-muted text-justify py-5 px-3">
+			<p>This project deals with an implementation of Android mobile application allowing example-based style transfer from a given style exemplar to a human face captured by a built-in camera. The uniqueness of our application consists
+			in the independence on any online computing resources. The entire process of stylization is computed offline by a mobile device. The mobile application uses an existing face detector for obtaining essential landmarks of a captured face,
+			and newly released efficient example-based style transfer algorithm - <a href="https://dcgi.fel.cvut.cz/home/sykorad/styleblit.html" target="_blank" class="my-link">StyleBlit</a>. In our implementation, we seek for as fast as possible response of the application together with faithful reproduction of an artistic style.</p>
+			<p><a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG.pdf" target="_blank" class="my-link"><i class="fas fa-file-pdf"></i> Master Thesis</a></p>
+		</div>
+	  
+	  
+	  
+	</div>
+	
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
