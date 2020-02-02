@@ -1,1 +1,7 @@
 .idea
+neurally_guided/.vs
+neurally_guided/Debug
+neurally_guided/neurally_guided.sln
+neurally_guided/neurally_guided.vcxproj
+neurally_guided/neurally_guided.vcxproj.filters
+neurally_guided/neurally_guided.vcxproj.user
