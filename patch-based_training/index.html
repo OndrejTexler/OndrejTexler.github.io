@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Patch-Based Training</title>
+	<title>Interactive Video Stylization</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<!-- Bootstrap core CSS -->
@@ -20,20 +20,128 @@
 
 	<div class="container text-center">
 
-		<div class="row pt-5">
-			<div class="col">
-				<h1>Interactive Style Transfer to Live Video Streams</h1>
+		<div class="row py-5 justify-content-center" id="top-section">
+			<h1>Interactive Video Stylization Using Few-Shot Patch-Based Training</h1>
+		</div>
+		
+		
+		
+		<div class="row pb-2">
+			<div class="col-md-6">
+				<div class="row pb-2 pb-md-0">
+					<!-- pb-2 only on screens smaller than md -->
+					<div class="col-6">
+						<h5><a href="https://ondrejtexler.github.io" target="_blank" class="my-link">Ondřej Texler</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+					<div class="col-6">
+						<h5><a href="https://dcgi.fel.cvut.cz/people/futscdav" target="_blank" class="my-link">David Futschik</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-6">
+						<h5><a href="https://cz.linkedin.com/in/kuceram" target="_blank" class="my-link">Michal Kučera</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+					<div class="col-6">
+						<h5><a href="https://dcgi.fel.cvut.cz/people/jamriond" target="_blank" class="my-link">Ondřej Jamriška</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		
-		<div class="row py-5 text-muted">
-			<div class="col">
-				<h4>To be revealed in May/June 2020.</h4>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row pb-2 pb-md-0">
+					<!-- pb-2 only on screens smaller than md -->
+					<div class="col">
+						<h5><a href="https://dcgi.fel.cvut.cz/people/sochosar" target="_blank" class="my-link">Šárka Sochorová</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+					<div class="col">
+						<h5><a href="http://mlchai.com/" target="_blank" class="my-link">Menglei Chai</a></h5>
+						<p class="text-muted">Snap, Inc.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col">
+						<h5><a href="http://www.stulyakov.com/" target="_blank" class="my-link">Sergey Tulyakov</a></h5>
+						<p class="text-muted">Snap, Inc.</p>
+					</div>
+					<div class="col">
+						<h5><a href="https://dcgi.fel.cvut.cz/home/sykorad" target="_blank" class="my-link">Daniel Sýkora</a></h5>
+						<p class="text-muted">CTU in Prague, FEE</p>
+					</div>
+				</div>
 			</div>
 		</div>
+		
+		
+		
+		<div class="row text-muted text-justify pt-5 pb-1">
+			<p>
+				In this paper, we present a learning-based method to the keyframe-based
+				video stylization that allows an artist to propagate the style from a few
+				selected keyframes to the rest of the sequence. Its key advantage is that
+				the resulting stylization is semantically meaningful, i.e., specific parts of
+				moving objects are stylized according to the artist’s intention. In contrast
+				to previous style transfer techniques, our approach does not require any
+				lengthy pre-training process nor a large training dataset. We demonstrate
+				how to train an appearance translation network from scratch using only
+				a few stylized exemplars while implicitly preserving temporal consistency.
+				This leads to a video stylization framework that supports real-time inference,
+				parallel processing, and random access to an arbitrary output frame. It can
+				also merge the content from multiple keyframes without the need to perform
+				an explicit blending operation.We demonstrate its practical utility in various
+				interactive scenarios, where the user paints over a selected keyframe and sees 
+				her style transferred to an existing recorded sequence or a live video stream.
+			</p>
+		</div>
+		<div class="row justify-content-center">
+			<a href="https://arxiv.org/abs/2004.14489" target="_blank" class="my-link"><i class="fas fa-file-pdf"></i> Full Text</a>
+			<a href="https://ondrejtexler.github.io/res/Texler20-CAG.bib" target="_blank" class="text-muted disabled ml-4"><i class="fas fa-book"></i> BibTeX</a>
+		</div>
+		
+		
+		
+		<div class="row pt-5">
+			<div class="embed-responsive embed-responsive-16by9 z-depth-2">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TZ0W5UQ5mrQ" allowfullscreen></iframe>
+			</div>
+		</div>
+		
+		<div class="row pt-5">
+			<div class="embed-responsive embed-responsive-16by9 z-depth-2">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NNxKU6woekY" allowfullscreen></iframe>
+			</div>
+		</div>
+		
+		<div class="row py-5">
+			<div class="embed-responsive embed-responsive-16by9 z-depth-2">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Fi4TXewjka0" allowfullscreen></iframe>
+			</div>
+		</div>
+		
+		
 
 
 	</div>
+	
+	<!-- Footer -->
+	<footer class="container-fluid text-center my-5">
+		<div class="fixed-action-btn smooth-scroll">
+			<a href="#top-section" class="btn-floating btn-large my-link" title="To Top">
+				<i class="fas fa-chevron-up" style="font-size:30px"></i>
+			</a>
+		</div>
+	</footer>
+		
 	
 
 	<!-- SCRIPTS -->
