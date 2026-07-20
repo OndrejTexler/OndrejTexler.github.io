@@ -1,983 +1,838 @@
-
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145182620-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+<html lang="en" class="scroll-smooth">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145182620-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-145182620-1');
+	</script>
 
-		  gtag('config', 'UA-145182620-1');
-		</script>
+	<title>Ondrej Texler</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Ondrej Texler — Head of Research at Valka.ai, PhD in Computer Graphics. Research in neural rendering, generative AI, and photorealistic virtual humans.">
 
-		<title>Ondrej Texler</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!-- Latest compiled and minified CSS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jQuery library -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> <!-- Popper JS -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
-		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" type="text/css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" type="text/css">
-		<link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
-		
-		<link rel="stylesheet" href="css/styles.css" type="text/css" >
-		<link rel="stylesheet" href="css/edu_timeline.css" type="text/css" >
-		<link rel="stylesheet" href="css/prof_exp_timeline.css" type="text/css" >
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" >
-		<link rel="icon" href="favicon.ico" type="image/x-icon" >
-		
-	</head>
-	<body data-spy="scroll" data-target="#navbarContent" data-offset="60">
+	<!-- Prevent flash of wrong theme -->
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (stored === 'dark' || (!stored && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {}
+		})();
+	</script>
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark aqua-gradient fixed-top navbar-custom py-0">
-			<div class="container">
-				<a class="navbar-brand py-3" href="#">Ondrej Texler</a>
-				
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+						display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+					},
+				},
+			},
+		};
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<style>
+		body { font-family: 'Inter', sans-serif; }
+		h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+		/* News collapse animation */
+		#newsList { transition: max-height 0.5s ease; }
+		#newsList.collapsed {
+			max-height: 12rem;
+			overflow: hidden;
+			-webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+			mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+		}
+	</style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300 selection:bg-sky-200 selection:text-sky-900 dark:selection:bg-sky-800 dark:selection:text-white">
+
+	<!-- ============================= NAVBAR ============================= -->
+	<header id="top" class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-slate-950/80">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+			<a href="#top" class="font-display text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+				Ondrej<span class="text-sky-500"> Texler</span>
+			</a>
+
+			<div class="hidden items-center gap-6 lg:flex">
+				<a href="#bio" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">Bio</a>
+				<a href="#news" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">News</a>
+				<a href="#patents" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">Patents</a>
+				<a href="#publications" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">Publications</a>
+				<a href="#profession" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">Experience</a>
+				<a href="#education" class="text-[13px] font-medium uppercase tracking-widest text-slate-500 transition hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400">Education</a>
+				<button id="themeToggle" type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 transition hover:border-sky-400 hover:text-sky-500 dark:border-white/10 dark:text-slate-300 dark:hover:text-sky-400">
+					<i class="fas fa-moon dark:hidden"></i>
+					<i class="fas fa-sun hidden dark:block"></i>
 				</button>
-				
-				<div class="collapse navbar-collapse" id="navbarContent">
-					<div class="nav navbar-nav ml-auto">
-						<a class="nav-item nav-link py-3" href="#bio">BIO</a>
-						<a class="nav-item nav-link py-3" href="#news">NEWS</a>
-						<a class="nav-item nav-link py-3" href="#patents">PATENTS</a>
-						<a class="nav-item nav-link py-3" href="#publications">PUBLICATIONS</a>
-						<a class="nav-item nav-link py-3" href="#education">EDUCATION</a>
-						<a class="nav-item nav-link py-3" href="#profession">PROFESSIONAL EXPERIENCE</a>
-					</div>
-				</div>
+			</div>
+
+			<div class="flex items-center gap-2 lg:hidden">
+				<button id="themeToggleMobile" type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 dark:border-white/10 dark:text-slate-300">
+					<i class="fas fa-moon dark:hidden"></i>
+					<i class="fas fa-sun hidden dark:block"></i>
+				</button>
+				<button id="menuToggle" type="button" aria-label="Toggle menu" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 dark:border-white/10 dark:text-slate-300">
+					<i class="fas fa-bars"></i>
+				</button>
 			</div>
 		</nav>
 
-
-		<div class="jumbotron jumbotron-fluid text-center bg-dark text-light mb-0">
-			<div class="container">
-			
-				<div class="card border-0 bg-dark shadow-lg mx-auto" style="max-width: 600px;">
-					<div class="row no-gutters align-items-center justify-content-center">
-						
-						<div class="col-md-5 col-5 p-1 pt-3 pt-md-0">
-						  <img src="img/profile_4.jpg" class="card-img" alt="img">
-						</div>
-
-						<div class="col-md-7">
-							<div class="card-body">
-								<h1 class="card-title">Ondrej Texler</h1>
-								<p class="card-text mb-1">Head of Research&nbsp;&nbsp;&nbsp;&nbsp;
-								<!-- <br> -->
-									<a class="text-reset" href="https://valka.ai/" target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;&nbsp;Valka.ai</a>
-								</p>
-
-								<p class="card-text mb-0">PhD graduate&nbsp;&nbsp;&nbsp;&nbsp;
-									<a class="text-reset" href="https://dcgi.fel.cvut.cz/?lang=en&do=lang" target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;&nbsp;CTU in Prague</a>
-								</p>
-								<br>
-								<!-- <p class="card-text"><a class="text-reset" href="mailto: ondrej.texler@gmail.com"><i class="fas fa-envelope"></i>&nbsp;&nbsp;ondrej.texler@gmail.com</a></p> -->
-								<div class="row justify-content-center">
-									<a class="card-link" href="https://ondrejtexler.github.io/res/Texler-CV.pdf" target="_blank" ><img class="icon-scale" src="img/cv.png" style="height:27px"></a>
-									<a class="card-link" href="https://scholar.google.com/citations?hl=en&user=8GxAlSUAAAAJ" target="_blank" ><img class="icon-scale" src="img/google-scholar.png" style="height:30px"></a>
-									<a class="card-link" href="https://www.linkedin.com/in/ondrej-texler/" target="_blank"><i class="fab fa-linkedin icon-scale" style="font-size:30px;color:white"></i></a>
-									<a class="card-link" href="https://github.com/OndrejTexler" target="_blank"><i class="fab fa-github icon-scale" style="font-size:30px;color:white"></i></a>
-									<a class="card-link" href="https://www.facebook.com/ondrej.texler" target="_blank"><i class="fab fa-facebook-square icon-scale" style="font-size:30px;color:white"></i></a>
-								</div>
-								
-								</br>
-								
-								<p class="card-text font-italic mb-0" style="color: rgb(166, 166, 166);">
-									<a class="text-reset" href="https://youtu.be/0pdOTyk5azQ?si=3exS2Vv6SKJ7EOOI" target="_blank">"I'd rather be anything but ordinary, please" &nbsp;&nbsp;<i class="fas fa-music"></i> </a>
-								</br>
-									<i class="text-reset" style="text-align:right;"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; —Avril Lavigne </i>
-								</p>								
-							</div>
-						</div>
-						
-					</div>
-				</div>
+		<!-- Mobile menu -->
+		<div id="mobileMenu" class="hidden border-t border-slate-200/70 bg-white/95 px-5 py-3 dark:border-white/10 dark:bg-slate-950/95 lg:hidden">
+			<div class="flex flex-col gap-1">
+				<a href="#bio" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">Bio</a>
+				<a href="#news" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">News</a>
+				<a href="#patents" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">Patents</a>
+				<a href="#publications" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">Publications</a>
+				<a href="#profession" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">Professional Experience</a>
+				<a href="#education" class="mobile-link rounded-lg px-3 py-2 text-sm font-medium uppercase tracking-wide text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">Education</a>
 			</div>
 		</div>
-		
-		
-		<!-- Container (Short Bio Section) -->
-		<div id="bio" class="container-fluid">
-			<div class="container py-3">
-				<div class="row">
-					<div class="col-md-12 pb-4 pb-md-0">
-						<h2 class="text-center text-md-left">Short Bio</h2>					
+	</header>
+
+	<!-- ============================= HERO ============================= -->
+	<section class="relative isolate overflow-hidden pt-16">
+		<div class="absolute inset-0 -z-10">
+			<img src="img/jumbotron_bg9.jpg" alt="" class="h-full w-full object-cover">
+			<!-- <div class="absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-900/80 to-sky-950/85"></div> -->
+			<div class="absolute inset-0 bg-slate-950/60"></div>
+		</div>
+
+		<div class="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+			<div class="mx-auto flex max-w-3xl flex-col items-center w-fit gap-x-16 gap-y-8 text-center sm:flex-row sm:text-left">
+				<img src="img/profile_4_web.jpg" alt="Ondrej Texler"
+					 class="h-40 w-40 shrink-0 rounded-2xl object-cover shadow-2xl ring-1 ring-white/20 sm:h-52 sm:w-52">
+
+				<div class="text-white">
+					<h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Ondrej Texler</h1>
+
+					<div class="mt-4 space-y-1 text-sm text-slate-200">
 						<p>
-							As Head of Research at <a href="https://valka.ai/" target="_blank" class="my-link">Valka.ai</a>, I have
-							built and now lead a research team of over 20 exceptional scientists and research engineers while collaborating closely 
-							with several universities. My work spans a broad range of research areas, ranging from photorealistic rendering
-							of human faces, hands, and bodies via neural rendering techniques including DiT, Flow Matching, Gaussian Splatting, and GANs, 
-							to motion modeling of human hands and hand-object interactions, audio synthesis and text-to-speech generation, and 
-							world models for understanding and generating very long 
-							and complex scenes with multiple interacting virtual avatars.
+							Head of Research
+							<a href="https://valka.ai/" target="_blank" rel="noopener" class="ml-1 inline-flex items-center gap-1 font-medium text-sky-300 hover:text-sky-200">
+								<i class="fas fa-external-link-alt text-xs"></i> Valka.ai
+							</a>
 						</p>
 						<p>
-							My entire research career has been revolving around generating realistically looking content 
-							given certain conditions, ranging from painterly images, animated stylized videos, to expressive 
-							photorealistic avatars with believable and controllable motion. I hold PhD in Computer Graphics, 
-							published over 10 papers at top venues such as CVPR or SIGGRAPH, have been cited over 300 times, 
-							have GitHub repositories with over 700 stars and 100 forks, co-invented 9 patents, created 
-							proof-of-concepts helping to raise multi-million seed round, shipped and released computer 
-							vision models and novel rendering pipelines unlocking millions of dollars in ARR, founded and 
-							led research teams, peer-reviewed tens of papers, won prizes such as the Best in Show Award at 
-							Real-Time Live SIGGRAPH or Joseph Fourier Prize, and gave invited talks and interviews at 
-							SIGGRAPH Now, ECCV, or BBC News.
+							PhD graduate
+							<a href="https://dcgi.fel.cvut.cz/?lang=en&do=lang" target="_blank" rel="noopener" class="ml-1 inline-flex items-center gap-1 font-medium text-sky-300 hover:text-sky-200">
+								<i class="fas fa-external-link-alt text-xs"></i> CTU in Prague
+							</a>
 						</p>
 					</div>
-					<!-- <div class="col-md-3 pb-4 pb-md-0">
-						<h2 class="text-center">Research Interests</h2>
-						<div class="container text-center">
-							<span class="badge rounded-pill bg-grey text-dark px-3 pt-2 mb-2 mr-1"><h6>Video Diffusion Models</h6></span>
-							<span class="badge rounded-pill bg-grey text-dark px-3 pt-2 mb-2 mr-1"><h6>Motion Modeling</h6></span>
-							<span class="badge rounded-pill bg-grey text-dark px-3 pt-2 mb-2 mr-1"><h6>Computer Vision</h6></span>
-							<span class="badge rounded-pill bg-grey text-dark px-3 pt-2 mb-2 mr-1"><h6>Generative AI</h6></span>
-							<span class="badge rounded-pill bg-grey text-dark px-3 pt-2 mb-2"><h6>Computer Graphics</h6></span>
-						</div>
-					</div> 
-					-->
+
+					<div class="mt-5 flex items-center justify-center gap-3 sm:justify-start">
+						<a href="https://ondrejtexler.github.io/res/Texler-CV.pdf" target="_blank" rel="noopener" title="Curriculum Vitae"
+						   class="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-lg text-white ring-1 ring-white/20 backdrop-blur transition hover:scale-110 hover:bg-white/20">
+							<i class="fas fa-file-lines"></i>
+						</a>
+						<a href="https://scholar.google.com/citations?hl=en&user=8GxAlSUAAAAJ" target="_blank" rel="noopener" title="Google Scholar"
+						   class="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-lg text-white ring-1 ring-white/20 backdrop-blur transition hover:scale-110 hover:bg-white/20">
+							<i class="fas fa-graduation-cap"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/ondrej-texler/" target="_blank" rel="noopener" title="LinkedIn"
+						   class="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-lg text-white ring-1 ring-white/20 backdrop-blur transition hover:scale-110 hover:bg-white/20">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+						<a href="https://github.com/OndrejTexler" target="_blank" rel="noopener" title="GitHub"
+						   class="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-lg text-white ring-1 ring-white/20 backdrop-blur transition hover:scale-110 hover:bg-white/20">
+							<i class="fab fa-github"></i>
+						</a>
+						<a href="https://www.facebook.com/ondrej.texler" target="_blank" rel="noopener" title="Facebook"
+						   class="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-lg text-white ring-1 ring-white/20 backdrop-blur transition hover:scale-110 hover:bg-white/20">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</div>
+
+					<p class="mt-5 text-xs italic text-slate-400">
+						<a href="https://youtu.be/0pdOTyk5azQ?si=3exS2Vv6SKJ7EOOI" target="_blank" rel="noopener" class="hover:text-slate-200">
+							"I'd rather be anything but ordinary, please" <i class="fas fa-music"></i>
+						</a>
+						<span class="block sm:text-right">— Avril Lavigne</span>
+					</p>
 				</div>
 			</div>
 		</div>
+	</section>
 
+	<!-- ============================= SHORT BIO ============================= -->
+	<section id="bio" class="scroll-mt-20 bg-white py-16 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-8 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Short Bio</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+			<div class="space-y-5 text-[15px] leading-relaxed">
+				<p>
+					As Head of Research at <a href="https://valka.ai/" target="_blank" rel="noopener" class="font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400">Valka.ai</a>, I have
+					built and now lead a research team of over 20 exceptional scientists and research engineers while collaborating closely
+					with several universities. My work spans a broad range of research areas, ranging from photorealistic rendering
+					of human faces, hands, and bodies via neural rendering techniques including DiT, Flow Matching, Gaussian Splatting, and GANs,
+					to motion modeling of human hands and hand-object interactions, audio synthesis and text-to-speech generation, and
+					world models for understanding and generating very long
+					and complex scenes with multiple interacting virtual avatars.
+				</p>
+				<p>
+					My entire research career has been revolving around generating realistically looking content
+					given certain conditions, ranging from painterly images, animated stylized videos, to expressive
+					photorealistic avatars with believable and controllable motion. I hold PhD in Computer Graphics,
+					published over 10 papers at top venues such as CVPR or SIGGRAPH, have been cited over 300 times,
+					have GitHub repositories with over 700 stars and 100 forks, co-invented 9 patents, created
+					proof-of-concepts helping to raise multi-million seed round, shipped and released computer
+					vision models and novel rendering pipelines unlocking millions of dollars in ARR, founded and
+					led research teams, peer-reviewed tens of papers, won prizes such as the Best in Show Award at
+					Real-Time Live SIGGRAPH or Joseph Fourier Prize, and gave invited talks and interviews at
+					SIGGRAPH Now, ECCV, or BBC News.
+				</p>
+			</div>
+		</div>
+	</section>
 
-		<!-- Container (News Section) -->
-		<div id="news" class="container-fluid bg-grey">
-			<div class="container py-3">
-				<div class="row">
-					<div class="col">
-						<h2 class="text-center text-md-left">News</h2>
-						<ul id="boom" class="collapse">
-							<li><strong>[10/2025]:</strong> Our <strong>Meet-In-Style </strong> will be presented at the <a href="https://ieee-cga-siga-workshop-2025.github.io/website/"target="_blank" class="my-link">  CG&A workshop @ SIGGRAPH Asia 2025 </a> </li>
-							<li><strong>[04/2025]:</strong> Assuming Head of Research position at <a href="https://valka.ai/" target="_blank" class="my-link">Valka.ai</a> to put together a research team to tackle what has never been achieved before! -- stay tuned! </li>
-							<li><strong>[03/2025]:</strong> Our paper <strong>Meet-In-Style: Text-driven Real-time Video Stylization using Diffusion Models</strong> has been accepted to <a href="https://www.computer.org/csdl/magazine/cg" class="my-link">IEEE Computer Graphics and Applications</a>.</li>
-							<li><strong>[03/2025]:</strong> We finally published our 3D avatar paper <strong>3D Engine-ready Photorealistic Avatars via Dynamic Textures</strong>.</li>
-							<li><strong>[04/2024]:</strong> I am joining <a href="https://www.heygen.com/" target="_blank" class="my-link">HeyGen</a> as a Generative AI Researcher.</li>
-							<li><strong>[04/2023]:</strong> I left Samsung and assumed a permanent position of a Founding Research Scientist at Drip.Art (rebranded as <a href="https://www.comfy.org/" target="_blank" class="my-link">comfy.org</a>).</li>
-							<li><strong>[02/2023]:</strong> I joined Drip.Art (rebranded as <a href="https://www.comfy.org/" target="_blank" class="my-link">comfy.org</a>) as an external research advisor.</li>
-							<li><strong>[03/2023]:</strong> Our <strong>Synthesizing Photorealistic Virtual Humans</strong> paper has been accepted to <a href="https://cvpr2023.thecvf.com/" target="_blank" class="my-link">CVPR 2023</a>!</li>
-							<li><strong>[10/2022]:</strong> My <strong>National Interest Waiver Green Card </strong> application got approved!</li>
-							<li><strong>[07/2022]:</strong> We filed 3 patents related to generating photorealistic virtual humans!</li>
-							<li><strong>[01/2022]:</strong> I have been granted an <strong>O-1 U.S. visa</strong> in the science category.</li>
-							<li><strong>[10/2021]:</strong> I have been awarded the <a href="https://atos.net/en/about-us/competitions/atos-joseph-fourier-prize" target="_blank" class="my-link">Joseph Fourier Prize</a> for my research on Style Transfer!</li>
-							<li><strong>[07/2021]:</strong> I gave a <a href="https://youtu.be/Sry4Ji-UM2Y" target="_blank" class="my-link">talk at SIGGRAPH Now 2021</a>!</li>
-							<li><strong>[06/2021]:</strong> I was invited to give a <a href="https://youtu.be/tfLLYe1Uzvc" target="_blank" class="my-link">talk at 2d3d.ai</a>!</li>
-							<li><strong>[04/2021]:</strong> I successfully defended my PhD thesis!</li>
-							<li><strong>[03/2021]:</strong> I moved to California, and started a full-time position at <a href="https://archive.neonlife.ai/" target="_blank" class="my-link">NEON</a>, <a href="https://www.sra.samsung.com/" target="_blank" class="my-link">Samsung Research America</a>!</li>
-							<li><strong>[02/2021]:</strong> Our paper <strong>FaceBlit: Instant Real-time Example-based Style Transfer to Facial Videos</strong> has been accepted to <a href="http://i3dsymposium.github.io/2021/" class="my-link">i3D 2021</a>.</li>
-							<li><strong>[11/2020]:</strong> I gave a talk for <a href="https://www.youtube.com/watch?v=4aP0C72bK1c" class="my-link">BBC News Arabic</a> regarding our latest research.</li>
-							<li><strong>[10/2020]:</strong> Our paper <strong>StyleProp: Real-time Example-based Stylization of 3D Models</strong> has been accepted to <a href="https://pg2020.org/" class="my-link">PacificGraphics 2020</a>, Wellington, New Zealand.</li>
-							<li><strong>[8/2020]:</strong> We presented our paper <strong>Interactive Video Stylization Using Few-Shot Patch-Based Training</strong> at <a href="https://s2020.siggraph.org/" target="_blank" class="my-link">SIGGRAPH2020</a> full paper session, as a short oral at <a href="https://eccv2020.eu/" target="_blank" class="my-link">ECCV2020</a> Deep Internal Learning workshop, and at <a href="https://s2020.siggraph.org/conference/program-events/real-time-live/" target="_blank" class="my-link">Siggraph RealTime Live</a>, where we have won the <strong>Best in Show Award!</strong></li>
-							<li><strong>[6/2020]:</strong> Recently, I defended <em>"a proposal of a dissertation thesis"</em> and passed a Doctoral State Exam. I plan to finish my PhD in early 2021.</li>
-							<li><strong>[5/2020]:</strong> Our paper <strong>Interactive Video Stylization Using Few-Shot Patch-Based Training</strong> has been accepted to <a href="https://s2020.siggraph.org/" target="_blank" class="my-link">SIGGRAPH 2020</a>.</li>
-							<li><strong>[4/2020]:</strong> For the rest of the year 2020, I am joining <a href="https://www.sra.samsung.com/" target="_blank" class="my-link">Samsung Research America</a>, the <a href="https://archive.neonlife.ai/" target="_blank" class="my-link">NEON</a> team!</li>
-							<li><strong>[12/2019]:</strong> Our paper <strong>Arbitrary Style Transfer Using Neurally-Guided Patch-Based Synthesis</strong> has been accepted to <a href="https://www.journals.elsevier.com/computers-and-graphics" target="_blank" class="my-link">Computers &amp; Graphics</a> journal.</li>
-							<li><strong>[4/2019]:</strong> For Summer/Fall 2019 I will join <a href="https://www.snap.com" target="_blank" class="my-link">Snap Research</a> at Santa Monica, Los Angeles, CA.</li>
-							<li><strong>[4/2019]:</strong> Our paper <strong>Stylizing Video by Example</strong> has been accepted to <a href="https://s2019.siggraph.org/" class="my-link">SIGGRAPH 2019</a>, Los Angeles, CA.</li>
-							<li><strong>[4/2019]:</strong> On 5-May I am presenting <strong>Enhancing Neural Style Transfer using Patch-Based Synthesis</strong> at <a href="http://expressive.graphics/2019/" target="_blank" class="my-link">Expressive 2019</a>, Genoa, Italy.</li>
-							<li><strong>[3/2019]:</strong> On 6-May I am presenting <strong>Fast Example-Based Stylization with Local Guidance</strong> at <a href="https://www.eurographics2019.it/" target="_blank" class="my-link">EuroGraphics 2019</a>, Genoa, Italy.</li>
-						</ul>
-						<div class="text-center mt-2 mb-3">
-							<button type="button" class="collapsed btn btn-outline-secondary btn-sm" data-toggle="collapse" data-target="#boom" aria-expanded="false" aria-controls="boom">Show</button>
-						</div>
+	<!-- ============================= NEWS ============================= -->
+	<section id="news" class="scroll-mt-20 bg-slate-100 py-16 dark:bg-slate-900">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-8 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">News</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<ul id="newsList" class="collapsed space-y-3 text-[15px] leading-relaxed">
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[10/2025]</span> Our <strong>Meet-In-Style</strong> will be presented at the <a href="https://ieee-cga-siga-workshop-2025.github.io/website/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">CG&A workshop @ SIGGRAPH Asia 2025</a></li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[04/2025]</span> Assuming Head of Research position at <a href="https://valka.ai/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Valka.ai</a> to put together a research team to tackle what has never been achieved before! -- stay tuned!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[03/2025]</span> Our paper <strong>Meet-In-Style: Text-driven Real-time Video Stylization using Diffusion Models</strong> has been accepted to <a href="https://www.computer.org/csdl/magazine/cg" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">IEEE Computer Graphics and Applications</a>.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[03/2025]</span> We finally published our 3D avatar paper <strong>3D Engine-ready Photorealistic Avatars via Dynamic Textures</strong>.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[04/2024]</span> I am joining <a href="https://www.heygen.com/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">HeyGen</a> as a Generative AI Researcher.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[04/2023]</span> I left Samsung and assumed a permanent position of a Founding Research Scientist at Drip.Art (rebranded as <a href="https://www.comfy.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">comfy.org</a>).</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[02/2023]</span> I joined Drip.Art (rebranded as <a href="https://www.comfy.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">comfy.org</a>) as an external research advisor.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[03/2023]</span> Our <strong>Synthesizing Photorealistic Virtual Humans</strong> paper has been accepted to <a href="https://cvpr2023.thecvf.com/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">CVPR 2023</a>!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[10/2022]</span> My <strong>National Interest Waiver Green Card</strong> application got approved!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[07/2022]</span> We filed 3 patents related to generating photorealistic virtual humans!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[01/2022]</span> I have been granted an <strong>O-1 U.S. visa</strong> in the science category.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[10/2021]</span> I have been awarded the <a href="https://atos.net/en/about-us/competitions/atos-joseph-fourier-prize" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Joseph Fourier Prize</a> for my research on Style Transfer!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[07/2021]</span> I gave a <a href="https://youtu.be/Sry4Ji-UM2Y" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">talk at SIGGRAPH Now 2021</a>!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[06/2021]</span> I was invited to give a <a href="https://youtu.be/tfLLYe1Uzvc" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">talk at 2d3d.ai</a>!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[04/2021]</span> I successfully defended my PhD thesis!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[03/2021]</span> I moved to California, and started a full-time position at <a href="https://archive.neonlife.ai/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">NEON</a>, <a href="https://www.sra.samsung.com/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Samsung Research America</a>!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[02/2021]</span> Our paper <strong>FaceBlit: Instant Real-time Example-based Style Transfer to Facial Videos</strong> has been accepted to <a href="http://i3dsymposium.github.io/2021/" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">i3D 2021</a>.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[11/2020]</span> I gave a talk for <a href="https://www.youtube.com/watch?v=4aP0C72bK1c" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">BBC News Arabic</a> regarding our latest research.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[10/2020]</span> Our paper <strong>StyleProp: Real-time Example-based Stylization of 3D Models</strong> has been accepted to <a href="https://pg2020.org/" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">PacificGraphics 2020</a>, Wellington, New Zealand.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[8/2020]</span> We presented our paper <strong>Interactive Video Stylization Using Few-Shot Patch-Based Training</strong> at <a href="https://s2020.siggraph.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">SIGGRAPH2020</a> full paper session, as a short oral at <a href="https://eccv2020.eu/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">ECCV2020</a> Deep Internal Learning workshop, and at <a href="https://s2020.siggraph.org/conference/program-events/real-time-live/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Siggraph RealTime Live</a>, where we have won the <strong>Best in Show Award!</strong></li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[6/2020]</span> Recently, I defended <em>"a proposal of a dissertation thesis"</em> and passed a Doctoral State Exam. I plan to finish my PhD in early 2021.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[5/2020]</span> Our paper <strong>Interactive Video Stylization Using Few-Shot Patch-Based Training</strong> has been accepted to <a href="https://s2020.siggraph.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">SIGGRAPH 2020</a>.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[4/2020]</span> For the rest of the year 2020, I am joining <a href="https://www.sra.samsung.com/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Samsung Research America</a>, the <a href="https://archive.neonlife.ai/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">NEON</a> team!</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[12/2019]</span> Our paper <strong>Arbitrary Style Transfer Using Neurally-Guided Patch-Based Synthesis</strong> has been accepted to <a href="https://www.journals.elsevier.com/computers-and-graphics" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Computers &amp; Graphics</a> journal.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[4/2019]</span> For Summer/Fall 2019 I will join <a href="https://www.snap.com" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Snap Research</a> at Santa Monica, Los Angeles, CA.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[4/2019]</span> Our paper <strong>Stylizing Video by Example</strong> has been accepted to <a href="https://s2019.siggraph.org/" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">SIGGRAPH 2019</a>, Los Angeles, CA.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[4/2019]</span> On 5-May I am presenting <strong>Enhancing Neural Style Transfer using Patch-Based Synthesis</strong> at <a href="http://expressive.graphics/2019/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">Expressive 2019</a>, Genoa, Italy.</li>
+				<li><span class="font-semibold text-sky-600 dark:text-sky-400">[3/2019]</span> On 6-May I am presenting <strong>Fast Example-Based Stylization with Local Guidance</strong> at <a href="https://www.eurographics2019.it/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">EuroGraphics 2019</a>, Genoa, Italy.</li>
+			</ul>
+
+			<div class="mt-5 text-center">
+				<button id="newsToggle" type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2 text-sm font-medium text-slate-600 transition hover:border-sky-400 hover:text-sky-500 dark:border-white/15 dark:text-slate-300 dark:hover:text-sky-400">
+					<span data-label>Show more</span>
+					<i class="fas fa-chevron-down text-xs transition-transform" data-chevron></i>
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= PATENTS / TALKS / REVIEWS ============================= -->
+	<section id="patents" class="scroll-mt-20 bg-white py-16 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="grid gap-12 lg:grid-cols-12">
+				<!-- Patents -->
+				<div class="lg:col-span-7">
+					<div class="mb-8 flex items-center gap-4">
+						<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Selected Patents</h2>
+						<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
 					</div>
+					<ul class="space-y-6">
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Hierarchical Model-based Generation of Images</p>
+							<p class="mt-1 text-sm"><strong>O. Texler</strong>, D. Dinev, A. Gupta, H.J. Kang, A. Liot, S. Ravichandran, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent US17/967,868, December 2023</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Creating Images, Meshes, and Talking Animations from Mouth Shape Data</p>
+							<p class="mt-1 text-sm">S. Ravichandran, A. Liot, D. Dinev, <strong>O. Texler</strong>, H.J. Kang, J. Palan, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent US17/967,872, December 2023</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Multimodal Disentanglement for Generating Virtual Human Avatars</p>
+							<p class="mt-1 text-sm">S. Ravichandran, D. Dinev, <strong>O. Texler</strong>, A. Gupta, J. Palan, H.J. Kang, A. Liot, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent US18/296,202, January 2024</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">End-to-end System for Synthesizing Talking Virtual Human Avatars</p>
+							<p class="mt-1 text-sm">D. Dinev, <strong>O. Texler</strong>, S. Ravichandran, J. Palan, H.J. Kang, A. Gupta, A. Unnikrishnan, A. Liot, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent App. 63/436,058, December 2022</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Architecture for Using 1D Inputs in Image-2-Image Translation Networks</p>
+							<p class="mt-1 text-sm">H.J. Kang, S. Ravichandran, <strong>O. Texler</strong>, D. Dinev, A. Liot, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent App. 63/436,211, December 2022</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">High-fidelity Neural Rendering of Images</p>
+							<p class="mt-1 text-sm">D. Dinev, S. Ravichandran, H.J. Kang, <strong>O. Texler</strong>, A. Liot, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent App. 63/461,199, January 2024</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Cache-based Content Distribution Network</p>
+							<p class="mt-1 text-sm">A. Liot, A. Unnikrishnan, S. Sadi, S. Banerjee, V. Gokul, J. Palan, H.J. Kang, <strong>O. Texler</strong></p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent App. 63/453,825, January 2024</p>
+						</li>
+						<li>
+							<p class="font-semibold text-slate-900 dark:text-white">Lightweight Rendering System with on-device Resolution Improvement</p>
+							<p class="mt-1 text-sm">R. Lokesh, S. Banerjee, H.J. Kang, <strong>O. Texler</strong>, S. Sadi</p>
+							<p class="text-sm italic text-slate-500 dark:text-slate-400">US Patent App. 63/456,337, January 2024</p>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Talks & Reviews -->
+				<div class="lg:col-span-5">
+					<div class="mb-8 flex items-center gap-4">
+						<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Talks &amp; Interviews</h2>
+						<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+					</div>
+					<ul class="space-y-2 text-[15px]">
+						<li><strong>SIGGRAPH Now 2021</strong>, invited talk <a href="https://youtu.be/Sry4Ji-UM2Y" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>2d3d.ai</strong>, invited talk, 2021 <a href="https://youtu.be/tfLLYe1Uzvc" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>BBC News Arabic</strong>, interview, 2020 <a href="https://www.youtube.com/watch?v=4aP0C72bK1c" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>RealTime Live!</strong>, session at SIGGRAPH 2020 <a href="https://youtu.be/DDlYIzhoXfI?t=610" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>ECCV 2020</strong>, short oral <a href="https://youtu.be/SHSkYXchttY" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>SIGGRAPH 2020</strong>, paper session <a href="https://youtu.be/NwhgHZQvsYI" target="_blank" rel="noopener" class="ml-1 text-sky-600 hover:text-sky-500 dark:text-sky-400"><i class="fas fa-external-link-alt text-xs"></i></a></li>
+						<li><strong>Expressive 2019</strong>, paper session</li>
+						<li><strong>EuroGraphics 2019</strong>, paper session</li>
+						<li><strong>CESCG 2018</strong>, paper session</li>
+					</ul>
+
+					<div class="mb-8 mt-10 flex items-center gap-4">
+						<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Review Services</h2>
+						<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+					</div>
+					<ul class="space-y-2 text-[15px]">
+						<li>SIGGRAPH Asia, ACM TOG: <strong>2021, 2022, 2024, 2025</strong></li>
+						<li>SIGGRAPH, ACM TOG: <strong>2022</strong></li>
+						<li>CAG, Computers &amp; Graphics: <strong>2023, 2024, 2025</strong></li>
+						<li>AI4CC @ CVPR, AI for Content Creation Workshop: <strong>2024</strong></li>
+						<li>WACV, IEEE/CVF Winter Conference on Applications of Computer Vision: <strong>2024</strong></li>
+						<li>TVCG, IEEE Transactions on Visualization and Computer Graphics: <strong>2022</strong></li>
+						<li>Pacific Graphics, Computer Graphics Forum: <strong>2021</strong></li>
+						<li>CTU in Prague, Thesis Reviewer: <strong>2024</strong></li>
+						<li>Qeios: <strong>2025</strong></li>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<!-- Container (Patents Section) -->
-		<div id="patents" class="container-fluid">
-			<div class="container py-3">
-				<div class="row">
-					<div class="col-md-7 pb-4 pb-md-0">
-						<h2 class="text-center text-md-left">Selected Patents</h2>	
-						<ul>
-							<li><strong>Hierarchical Model-based Generation of Images</strong>
-								<ul>
-									<li><strong>O. Texler</strong>, D. Dinev, A. Gupta, H.J. Kang, A. Liot, S. Ravichandran, S. Sadi</li>
-									<li><em>US Patent US17/967,868, December 2023</em></li>
-								</ul>
-							</li>
-							<li><strong>Creating Images, Meshes, and Talking Animations from Mouth Shape Data</strong>
-								<ul>
-									<li>S. Ravichandran, A. Liot, D. Dinev, <strong>O. Texler</strong>, H.J. Kang, J. Palan, S. Sadi</li>
-									<li><em>US Patent US17/967,872, December 2023</em></li>
-								</ul>
-							</li>
-							<li><strong>Multimodal Disentanglement for Generating Virtual Human Avatars</strong>
-								<ul>
-									<li>S. Ravichandran, D. Dinev, <strong>O. Texler</strong>, A. Gupta, J. Palan, H.J. Kang, A. Liot, S. Sadi</li>
-									<li><em>US Patent US18/296,202, January 2024</em></li>
-								</ul>
-							</li>
-							<li><strong>End-to-end System for Synthesizing Talking Virtual Human Avatars</strong>
-								<ul>
-									<li>D. Dinev, <strong>O. Texler</strong>,  S. Ravichandran, J. Palan, H.J. Kang, A. Gupta, A. Unnikrishnan, A. Liot, S. Sadi</li>
-									<li><em>US Patent App. 63/436,058, December 2022</em></li>
-								</ul>
-							</li>
-							<li><strong>Architecture for Using 1D Inputs in Image-2-Image Translation Networks</strong>
-								<ul>
-									<li>H.J. Kang, S. Ravichandran, <strong>O. Texler</strong>, D. Dinev, A. Liot, S. Sadi</li>
-									<li><em>US Patent App. 63/436,211, December 2022</em></li>
-								</ul>
-							</li>
-
-							<li><strong>High-fidelity Neural Rendering of Images</strong>
-								<ul>
-									<li>D. Dinev, S. Ravichandran, H.J. Kang, <strong>O. Texler</strong>, A. Liot, S. Sadi</li>
-									<li><em>US Patent App. 63/461,199, January 2024</em></li>
-								</ul>
-							</li>
-							<li><strong>Cache-based Content Distribution Network</strong>
-								<ul>
-									<li>A. Liot, A. Unnikrishnan, S. Sadi, S. Banerjee, V. Gokul, J. Palan, H.J. Kang, <strong>O. Texler</strong></li>
-									<li><em>US Patent App. 63/453,825, January 2024</em></li>
-								</ul>
-							</li>
-							<li><strong>Lightweight Rendering System with on-device Resolution Improvement</strong>
-								<ul>
-									<li>R. Lokesh, S. Banerjee, H.J. Kang, <strong>O. Texler</strong>, S. Sadi</li>
-									<li><em>US Patent App. 63/456,337, January 2024</em></li>
-								</ul>
-							</li>
-						</ul>				
-						
-					</div>
-					<div class="col-md-5 pb-4 pb-md-0">
-						<h2 class="text-center text-md-left">Talks & Interviews</h2>
-						<ul>
-							<li><strong>SIGGRAPH Now 2021</strong>, invited talk&nbsp;&nbsp;<a class="text-reset" href="https://youtu.be/Sry4Ji-UM2Y" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>2d3d.ai</strong>, invited talk, 2021&nbsp;&nbsp;<a class="text-reset" href="https://youtu.be/tfLLYe1Uzvc" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>BBC News Arabic</strong>, interview, 2020&nbsp;&nbsp;<a class="text-reset" href="https://www.youtube.com/watch?v=4aP0C72bK1c" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>RealTime Live!</strong>, session at SIGGRAPH 2020&nbsp;&nbsp;<a class="text-reset" href="https://youtu.be/DDlYIzhoXfI?t=610" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>ECCV 2020</strong>, short oral&nbsp;&nbsp;<a class="text-reset" href="https://youtu.be/SHSkYXchttY" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>SIGGRAPH 2020</strong>, paper session&nbsp;&nbsp;<a class="text-reset" href="https://youtu.be/NwhgHZQvsYI" target="_blank"><i class="fas fa-external-link-alt icon-scale my-link"></i></a></li>
-							<li><strong>Expressive 2019</strong>, paper session</li>
-							<li><strong>EuroGraphics 2019</strong>, paper session</li>
-							<li><strong>CESCG 2018</strong>, paper session</li>
-						</ul>
-						
-						<h2 class="text-center text-md-left">Review Services</h2>
-						<ul>
-							<li>SIGGRAPH Asia, ACM TOG: <strong> 2021, 2022, 2024, 2025 </strong> </li>
-							<li>SIGGRAPH, ACM TOG: <strong>  2022 </strong> </li>
-							<li>CAG, Computers & Graphics: <strong> 2023, 2024, 2025 </strong> </li>
-							<li>AI4CC @ CVPR, AI for Content Creation Workshop: <strong> 2024 </strong> </li>
-							<li>WACV, IEEE/CVF Winter Conference on Applications of Computer Vision: <strong> 2024 </strong> </li>
-							<li>TVCG, IEEE Transactions on Visualization and Computer Graphics: <strong> 2022 </strong> </li>
-							<li>Pacific Graphics, Computer Graphics Forum: <strong> 2021 </strong> </li>
-							<li>CTU in Prague, Thesis Reviewer: <strong> 2024 </strong></li>
-							<li>Qeios: <strong> 2025 </strong> </li>
-						</ul>
-					</div>
-				</div>
+	<!-- ============================= PUBLICATIONS ============================= -->
+	<section id="publications" class="scroll-mt-20 bg-slate-100 py-16 dark:bg-slate-900">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-8 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Publications</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
 			</div>
-		</div>	
 
-		<!-- Container (Publictions Section) -->
-		<div id="publications" class="container-fluid bg-grey">
-			<div class="container py-3">
-				<h2 class="text-center text-md-left">Publications</h2>
+			<div class="space-y-6">
 
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_meet_in_style.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Meet-In-Style: Text-driven Real-time Video Stylization using Diffusion Models</h4>
-							<p class="card-text mb-1">D. Kunz, <strong>O. Texler</strong>, D. Mould, and D. Sýkora </p>
-							<p class="card-text mb-3"> <em>IEEE Computer Graphics and Applications</em>, <strong class="text-danger">CG&A Workshop at SIGGRAPH Asia 2025</strong></p>
-							<a href="https://ondrejtexler.github.io/meet_in_style/" target="_blank" class="card-link my-link"><nobr></nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://www.computer.org/csdl/magazine/cg/5555/01/10938125/25mYQqf1eFO" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://youtu.be/w7-2Z0hq2mk?si=7VT9kJ4N0J2mxnBP" target="_blank" class="card-link my-link"><nobr><i class="fab fa-youtube"></i> Supplementary Video</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Kunz25.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-						  </div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_AvatarsViaDynamicTextures.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">3D Engine-ready Photorealistic Avatars via Dynamic Textures</h4>
-							<p class="card-text mb-1">Y. Wang, I. Molodetskikh, <strong>O. Texler</strong>, and D. Dinev</p>
-							<p class="card-text mb-3"> <em>arXiv pre-print</em>, 2025</p>
-							<a href="https://ondrejtexler.github.io/avatars_via_dynamic_textures/" target="_blank" class="card-link my-link"><nobr></nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://arxiv.org/pdf/2503.14943" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://youtu.be/S1ni3Bfv_d8?si=W-21ik7yoDQU0kBJ" target="_blank" class="card-link my-link"><nobr><i class="fab fa-youtube"></i> Supplementary Video</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Wang25.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-						  </div>
+				<!-- Meet-In-Style -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_meet_in_style.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Meet-In-Style: Text-driven Real-time Video Stylization using Diffusion Models</h3>
+							<p class="mt-2 text-sm">D. Kunz, <strong>O. Texler</strong>, D. Mould, and D. Sýkora</p>
+							<p class="text-sm"><em>IEEE Computer Graphics and Applications</em>, <strong class="text-rose-600 dark:text-rose-400">CG&A Workshop at SIGGRAPH Asia 2025</strong></p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/meet_in_style/" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://www.computer.org/csdl/magazine/cg/5555/01/10938125/25mYQqf1eFO" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://youtu.be/w7-2Z0hq2mk?si=7VT9kJ4N0J2mxnBP" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> Supplementary Video</a>
+								<a href="https://ondrejtexler.github.io/res/Kunz25.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
+				</article>
 
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/synthesizingphotorealistic_paper.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Synthesizing Photorealistic Virtual Humans Through Cross-modal Disentanglement</h4>
-							<p class="card-text mb-1">S. Ravichandran, <strong>O. Texler</strong>, D. Dinev, and HJ. Kang</p>
-							<p class="card-text mb-3"> <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>, CVPR 2023</p>
-							<a href="https://ondrejtexler.github.io/synthesizing_humans/" target="_blank" class="card-link my-link"><nobr></nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://arxiv.org/pdf/2209.01320.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Ravichandran23-CVPR_supp.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Supplementary PDF</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Ravichandran23-CVPR.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-							</br>
-							<a href="https://cvpr.thecvf.com/virtual/2023/poster/22125" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> CVPR video/project page [Only registered CVPR attendees]</nobr></a>
-						  </div>
+				<!-- Avatars via Dynamic Textures -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_AvatarsViaDynamicTextures.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">3D Engine-ready Photorealistic Avatars via Dynamic Textures</h3>
+							<p class="mt-2 text-sm">Y. Wang, I. Molodetskikh, <strong>O. Texler</strong>, and D. Dinev</p>
+							<p class="text-sm"><em>arXiv pre-print</em>, 2025</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/avatars_via_dynamic_textures/" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://arxiv.org/pdf/2503.14943" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://youtu.be/S1ni3Bfv_d8?si=W-21ik7yoDQU0kBJ" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> Supplementary Video</a>
+								<a href="https://ondrejtexler.github.io/res/Wang25.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/faceblit_paper.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">FaceBlit: Instant Real-time Example-based Style Transfer to&nbsp;Facial Videos</h4>
-							<p class="card-text mb-1">A. Texler, <strong>O. Texler</strong>, M. Kučera, M. Chai, and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>Proceedings of the ACM in Computer Graphics and Interactive Techniques, 4(1)</em>, 2021 (I3D 2021)</p>
-							<a href="https://ondrejtexler.github.io/faceblit/index.html" target="_blank" class="card-link my-link"><nobr></nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler21-I3D.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://youtu.be/XF6lWAVFXy0" target="_blank" class="card-link my-link"><nobr><i class="fab fa-youtube"></i> Supplementary Video</nobr></a>
-							<a href="https://youtu.be/o8ayf59BW5o" target="_blank" class="card-link my-link me-3"><nobr><i class="fab fa-youtube"></i> Presentation</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler21-I3D.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a> 
-						  </div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_styleprop.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">StyleProp: Real-time Example-based Stylization of 3D Models</h4> 
-							<p class="card-text mb-1">F. Hauptfleisch, <strong>O. Texler</strong>, A. Texler, J. Křivánek, and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>Computer Graphics Forum 39(7):575-586</em> &nbsp(PacificGraphics 2020)</p>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/styleprop.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Hauptfleisch20-PG.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://youtu.be/6Y9EAgMxW_w" target="_blank" class="card-link my-link"><nobr><i class="fab fa-youtube"></i> Supplementary Video</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Hauptfleisch20-PG.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>	
-						  </div>
+				</article>
+
+				<!-- Synthesizing Photorealistic Virtual Humans -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/synthesizingphotorealistic_paper.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Synthesizing Photorealistic Virtual Humans Through Cross-modal Disentanglement</h3>
+							<p class="mt-2 text-sm">S. Ravichandran, <strong>O. Texler</strong>, D. Dinev, and HJ. Kang</p>
+							<p class="text-sm"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>, CVPR 2023</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/synthesizing_humans/" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://arxiv.org/pdf/2209.01320.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://ondrejtexler.github.io/res/Ravichandran23-CVPR_supp.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Supplementary PDF</a>
+								<a href="https://ondrejtexler.github.io/res/Ravichandran23-CVPR.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+								<a href="https://cvpr.thecvf.com/virtual/2023/poster/22125" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> CVPR video/project page</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_VideoStylization_Mucha.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Interactive Video Stylization Using Few-Shot Patch-Based Training</h4>
-							<p class="card-text mb-1"><strong>O. Texler</strong>, D. Futschik, M. Kučera, O. Jamriška, Š. Sochorová, M. Chai, S. Tulyakov, and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>ACM Transactions on Graphics 39(4):73</em> &nbsp(SIGGRAPH 2020), <strong class="text-danger">Best in Show Award at SIGGRAPH Real-Time Live!</strong></p>
-							<a href="https://ondrejtexler.github.io/patch-based_training/index.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Texler20-SIG_patch-based_training_main.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://youtu.be/NwhgHZQvsYI" target="_blank" class="card-link my-link"><nobr><i class="fab fa-youtube"></i> SIGGRAPH Talk</nobr></a>
-							<a href="https://github.com/OndrejTexler/Few-Shot-Patch-Based-Training" target="_blank" class="card-link my-link"><nobr><i class="fab fa-github"></i> GitHub</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Texler20-SIG_patch-based_training_supp.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Supplementary</nobr></a>
-							<a href="https://drive.google.com/file/d/1QWZp5pkVlCeRqh6cNPYxSSGHK-KWblA0/view?usp=sharing" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-powerpoint"></i> Presentation</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler20-SIG.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>				  
-						  </div>
+				</article>
+
+				<!-- FaceBlit -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/faceblit_paper.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">FaceBlit: Instant Real-time Example-based Style Transfer to&nbsp;Facial Videos</h3>
+							<p class="mt-2 text-sm">A. Texler, <strong>O. Texler</strong>, M. Kučera, M. Chai, and D. Sýkora</p>
+							<p class="text-sm">In <em>Proceedings of the ACM in Computer Graphics and Interactive Techniques, 4(1)</em>, 2021 (I3D 2021)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/faceblit/index.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler21-I3D.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://youtu.be/XF6lWAVFXy0" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> Supplementary Video</a>
+								<a href="https://youtu.be/o8ayf59BW5o" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> Presentation</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler21-I3D.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_Neurally_Guided/paper_image_Neurally_Guided.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Arbitrary Style Transfer Using Neurally-Guided Patch-Based Synthesis</h4>
-							<p class="card-text mb-1"><strong>O. Texler</strong>, D. Futschik, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>Computers &amp; Graphics 87:62-71</em> &nbsp(January 2020)</p>
-							<a href="https://ondrejtexler.github.io/neurally_guided/index.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/CAG_main.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://github.com/OndrejTexler/Neurally-Guided-Style-Transfer" target="_blank" class="card-link my-link"><nobr><i class="fab fa-github"></i> GitHub</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/Texler20-CAG.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>					  
-						  </div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_StylizingVideoByExample.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Stylizing Video by Example</h4>
-							<p class="card-text mb-1">O. Jamriška, Š. Sochorová, <strong>O. Texler</strong>, M. Lukáč, J. Fišer, J. Lu, E. Shechtman, and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>ACM Transactions on Graphics 38(4):107</em> &nbsp(SIGGRAPH 2019, Los Angeles, California, July 2019)</em></p>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/ebsynth.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG_supp.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Supplementary</nobr></a>
-							<a href="https://ebsynth.com/" target="_blank" class="card-link my-link"><nobr><i class="fas fa-magic"></i> Demo</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-						  
-						  </div>
+				</article>
+
+				<!-- StyleProp -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_styleprop.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">StyleProp: Real-time Example-based Stylization of 3D Models</h3>
+							<p class="mt-2 text-sm">F. Hauptfleisch, <strong>O. Texler</strong>, A. Texler, J. Křivánek, and D. Sýkora</p>
+							<p class="text-sm">In <em>Computer Graphics Forum 39(7):575-586</em> &nbsp;(PacificGraphics 2020)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/styleprop.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Hauptfleisch20-PG.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://youtu.be/6Y9EAgMxW_w" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> Supplementary Video</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Hauptfleisch20-PG.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_Enhancing.png" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Enhancing Neural Style Transfer using Patch-Based Synthesis</h4>
-							<p class="card-text mb-1"><strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora</p>
-							<p class="card-text mb-3"> In <em>Proceedings of the 8th ACM/EG Expressive Symposium, pp. 43-50</em> &nbsp(Expressive 2019, Genoa, Italy, May 2019)</p>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://github.com/OndrejTexler/Neurally-Guided-Style-Transfer" target="_blank" class="card-link my-link"><nobr><i class="fab fa-github"></i> GitHub</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural-supp/index.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Interactive Supplementary</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pptx" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-powerpoint"></i> Presentation</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-						  </div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_StyleBlit.jpg" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">StyleBlit: Fast Example-Based Stylization with Local Guidance</h4>
-							<p class="card-text mb-1">D. Sýkora, O. Jamriška, <strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu and E. Shechtman</p>
-							<p class="card-text mb-3">In <em>Computer Graphics Forum 38(2):83-91</em> &nbsp(Eurographics 2019, Genoa, Italy, May 2019)</p>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/styleblit.html" target="_blank" class="card-link my-link"><nobr><i class="fas fa-globe"></i> Project Page</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://github.com/jamriska/styleblit" target="_blank" class="card-link my-link"><nobr><i class="fab fa-github"></i> GitHub</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG_supp.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Supplementary</nobr></a>
-							<!--br-->
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pptx" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-powerpoint"></i> Presentation</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/StyleBlit/unity_plugin.zip" target="_blank" class="card-link my-link"><nobr><i class="fas fa-gamepad"></i> Unity3D Asset</nobr></a>
-							<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.bib" target="_blank" class="card-link my-link"><nobr><i class="fas fa-book"></i> BibTeX</nobr></a>
-						  </div>
+				</article>
+
+				<!-- Interactive Video Stylization -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_VideoStylization_Mucha.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Interactive Video Stylization Using Few-Shot Patch-Based Training</h3>
+							<p class="mt-2 text-sm"><strong>O. Texler</strong>, D. Futschik, M. Kučera, O. Jamriška, Š. Sochorová, M. Chai, S. Tulyakov, and D. Sýkora</p>
+							<p class="text-sm">In <em>ACM Transactions on Graphics 39(4):73</em> &nbsp;(SIGGRAPH 2020), <strong class="text-rose-600 dark:text-rose-400">Best in Show Award at SIGGRAPH Real-Time Live!</strong></p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/patch-based_training/index.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://ondrejtexler.github.io/res/Texler20-SIG_patch-based_training_main.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://youtu.be/NwhgHZQvsYI" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-youtube"></i> SIGGRAPH Talk</a>
+								<a href="https://github.com/OndrejTexler/Few-Shot-Patch-Based-Training" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-github"></i> GitHub</a>
+								<a href="https://ondrejtexler.github.io/res/Texler20-SIG_patch-based_training_supp.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Supplementary</a>
+								<a href="https://drive.google.com/file/d/1QWZp5pkVlCeRqh6cNPYxSSGHK-KWblA0/view?usp=sharing" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler20-SIG.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="card mb-4 shadow">
-					<div class="row no-gutters">
-						<div class="col-md-3 my-auto">
-						  <img src="img/paper_image_StylizationNavigationMaps.jpg" class="card-img" alt="img">
-						</div>
-						<div class="col-md-9">
-						  <div class="card-body">
-							<h4 class="card-title mb-4">Example-Based Stylization of Navigation Maps on Mobile Devices</h4>
-							<p class="card-text mb-1"><strong>O. Texler</strong> and D. Sýkora</p>
-							<p class="card-text mb-3">In <em>Proceedings of the 22nd Central European Seminar on Computer Graphics.</em> &nbsp(CESCG 2018, Smolenice, Slovakia, 2018)</p>
-							<a href="https://cescg.org/wp-content/uploads/2018/04/Texler-Example-Based-Stylization-of-Navigation-Maps-on-Mobile-Devices-3.pdf" target="_blank" class="card-link my-link"><nobr><i class="fas fa-file-pdf"></i> Paper</nobr></a>
-							<a href="https://ondrejtexler.github.io/res/CESCG_Texler.pptx" target="_blank" class="card-link my-link"><i class="fas fa-file-powerpoint"><nobr></i> Presentation</nobr></a>
-						  </div>
+				</article>
+
+				<!-- Neurally-Guided -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_Neurally_Guided/paper_image_Neurally_Guided.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Arbitrary Style Transfer Using Neurally-Guided Patch-Based Synthesis</h3>
+							<p class="mt-2 text-sm"><strong>O. Texler</strong>, D. Futschik, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora</p>
+							<p class="text-sm">In <em>Computers &amp; Graphics 87:62-71</em> &nbsp;(January 2020)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://ondrejtexler.github.io/neurally_guided/index.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://ondrejtexler.github.io/res/CAG_main.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://github.com/OndrejTexler/Neurally-Guided-Style-Transfer" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-github"></i> GitHub</a>
+								<a href="https://ondrejtexler.github.io/res/Texler20-CAG.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				
+				</article>
+
+				<!-- Stylizing Video by Example -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_StylizingVideoByExample.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Stylizing Video by Example</h3>
+							<p class="mt-2 text-sm">O. Jamriška, Š. Sochorová, <strong>O. Texler</strong>, M. Lukáč, J. Fišer, J. Lu, E. Shechtman, and D. Sýkora</p>
+							<p class="text-sm">In <em>ACM Transactions on Graphics 38(4):107</em> &nbsp;(SIGGRAPH 2019, Los Angeles, California, July 2019)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/ebsynth.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG_supp.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Supplementary</a>
+								<a href="https://ebsynth.com/" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-magic"></i> Demo</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Jamriska19-SIG.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Enhancing Neural Style Transfer -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_Enhancing.png" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Enhancing Neural Style Transfer using Patch-Based Synthesis</h3>
+							<p class="mt-2 text-sm"><strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu, E. Shechtman, and D. Sýkora</p>
+							<p class="text-sm">In <em>Proceedings of the 8th ACM/EG Expressive Symposium, pp. 43-50</em> &nbsp;(Expressive 2019, Genoa, Italy, May 2019)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://github.com/OndrejTexler/Neurally-Guided-Style-Transfer" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-github"></i> GitHub</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/stylitneural-supp/index.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Interactive Supplementary</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.pptx" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Texler19-NPAR.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- StyleBlit -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_StyleBlit.jpg" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">StyleBlit: Fast Example-Based Stylization with Local Guidance</h3>
+							<p class="mt-2 text-sm">D. Sýkora, O. Jamriška, <strong>O. Texler</strong>, J. Fišer, M. Lukáč, J. Lu and E. Shechtman</p>
+							<p class="text-sm">In <em>Computer Graphics Forum 38(2):83-91</em> &nbsp;(Eurographics 2019, Genoa, Italy, May 2019)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/styleblit.html" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-globe"></i> Project Page</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://github.com/jamriska/styleblit" target="_blank" rel="noopener" class="pub-chip"><i class="fab fa-github"></i> GitHub</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG_supp.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Supplementary</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.pptx" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/StyleBlit/unity_plugin.zip" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-gamepad"></i> Unity3D Asset</a>
+								<a href="https://dcgi.fel.cvut.cz/home/sykorad/Sykora19-EG.bib" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-book"></i> BibTeX</a>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- Navigation Maps -->
+				<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 transition hover:shadow-md dark:bg-slate-950 dark:ring-white/10">
+					<div class="grid md:grid-cols-[minmax(0,14rem)_1fr]">
+						<div class="bg-slate-100 dark:bg-slate-900"><img src="img/paper_image_StylizationNavigationMaps.jpg" alt="" class="h-full w-full object-cover"></div>
+						<div class="p-5">
+							<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Example-Based Stylization of Navigation Maps on Mobile Devices</h3>
+							<p class="mt-2 text-sm"><strong>O. Texler</strong> and D. Sýkora</p>
+							<p class="text-sm">In <em>Proceedings of the 22nd Central European Seminar on Computer Graphics.</em> &nbsp;(CESCG 2018, Smolenice, Slovakia, 2018)</p>
+							<div class="mt-4 flex flex-wrap gap-2">
+								<a href="https://cescg.org/wp-content/uploads/2018/04/Texler-Example-Based-Stylization-of-Navigation-Maps-on-Mobile-Devices-3.pdf" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-pdf"></i> Paper</a>
+								<a href="https://ondrejtexler.github.io/res/CESCG_Texler.pptx" target="_blank" rel="noopener" class="pub-chip"><i class="fas fa-file-powerpoint"></i> Presentation</a>
+							</div>
+						</div>
+					</div>
+				</article>
+
 			</div>
-		</div>		
+		</div>
+	</section>
 
-		
-		<!-- Container (Professional Experience Section) -->
-		<div id="profession" class="container-fluid">
-			<div class="container py-3 pb-5">
-			
-			<h2 class="text-center text-md-left">Professional Experience</h2>
-			
-				<div class="row justify-content-center">
-					<div class="col-12">
-						<div class="timeline timeline-line-solid">
+	<!-- ============================= PROFESSIONAL EXPERIENCE ============================= -->
+	<section id="profession" class="scroll-mt-20 bg-white py-16 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Professional Experience</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
 
-							<span class="timeline-label">
-								<span class="label bg-secondary">present</span>
-							</span>
-							
-							<!-- ----- Valka.ai ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point" style="background-color: #cc181e; color: #cc181e;"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_valka.svg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Valka.ai, Los Angeles, California</h5>
-												</div>
-											</div>
-										</div>
-										
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Head of Research</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>4/2025 &#8210 present</h6>
-											</div>
-										</div>
-										
-										<div class="widget-footer">
-											<p> Leading a 20+ person research team advancing photorealistic neural rendering, 
-												generative speech and audio, human motion modeling and human-object interactions,
-												and world models for long-horizon scene understanding and generation.
-											</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
+			<div class="relative border-l-2 border-slate-200 pl-8 dark:border-white/10 sm:pl-10">
 
-							<!-- ----- HeyGen ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_heygen.svg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>HeyGen, Los Angeles, California</h5>
-												</div>
-											</div>
-										</div>
+				<div class="mb-6 inline-block rounded-full bg-slate-800 px-4 py-1 text-sm font-medium text-white dark:bg-slate-700">present</div>
 
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Research Scientist</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>4/2024 &#8210 3/2025</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Research of core avatar rendering technology. Developed a deferred neural 
-												rendering pipeline, shipped several GAN-based models and a novel scheme 
-												for rapid training of highly-realistic and expressive avatars, researched 
-												transformer-based diffusion models; unlocking multi-million revenue streams.
-											</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-
-							<!-- ----- DRIP ARTIFICIAL ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_drip_artificial.png">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Drip Artificial, San Francisco, California</h5>
-												</div>
-											</div>
-										</div>
-										
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Founding Research Scientist</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>2/2023 &#8210 4/2024</h6>
-											</div>
-										</div>
-										
-										<div class="widget-footer">
-											<p> (Rebranded as <a href="https://www.comfy.org/" target="_blank" class="my-link">comfy.org</a>)
-												Leading the research efforts into developing an end-to-end 
-												Generative AI framework that allows for creating stylized videos based on a text prompt; 
-												in particular, text-to-video synthesis, example-based video style transfer, 
-												and propagating edits through the video sequence. 
-												Helping to raise a multi-million seed investment round.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							<!-- ----- SAMSUNG ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_samsung.png">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<h5>Samsung Research America, California</h5>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Senior Research Scientist</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>3/2021 &#8210 4/2023</h6>
-											</div>
-										</div>	
-
-										<div class="widget-footer">
-											<p> Research and implementation of computer vision and deep learning techniques to 
-												render photorealistic virtual humans, focusing on faces. Involved conditional GANs, image-to-image 
-												translation networks, deferred neural rendering. Part of the NEON team. </p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_samsung.png">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<h5>Samsung Research America, California</h5>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Research Scientist Intern</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>4/2020 &#8210 2/2021</h6>
-											</div>
-										</div>	
-
-										<div class="widget-footer">
-											<p> Research and implementation of various image-to-image and video-to-video 
-												translation neural networks for face manipulation, e.g., adding makeup, changing skin tone, 
-												adding or removing scars or wrinkles. Part of the NEON team.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							<!-- ----- SNAP ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_snap.png">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Snap Inc., Los Angeles, California</h5>
-												</div>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Research Scientist Intern</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>7/2019 &#8210 10/2019</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Research of new techniques on training generative adversarial networks 
-												for style transfer tasks; focused on a scenario where a minimal amount of data is available, 
-												and an interactive response is required. Furthermore, developing a shader-based real-time 
-												stylization for human portraits.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-
-							<!-- ----- ADOBE REMOTE ----- -->	
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_adobe.jpg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Adobe Research, USA</h5>
-												</div>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Remote Collaboration</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>9/2017 &#8210 12/2019</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Remote collaboration on several research projects, publications, and 
-												tech transfer project. Computer graphics; patch-based style transfer; neural-network-based style transfer.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							<!-- ----- ADOBE SEATTLE ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_adobe.jpg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Adobe Research, Seattle, Washington</h5>
-												</div>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Research Scientist Intern</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>7/2018 &#8210 10/2018</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Combining neural-network-based and patch-based style transfer methods. 
-												Chunk-based style transfer method with focus on a real-time performance.</p>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							
-							<!-- ----- ADOBE SAN JOSE ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_adobe.jpg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Adobe Research, San Jose, California</h5>
-												</div>
-											</div>
-										</div>
-										
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Research Scientist Intern</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>9/2017 &#8210 12/2017</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Guiding patch-based style transfer method using convolutional neural 
-												networks, image harmonization, and histogram optimization. Integrating developed style transfer 
-												method into Adobe Photoshop.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							
-							<!-- ----- DYNAVIX ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_dynavix.jpg">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>Dynavix, Prague, Czechia</h5>
-												</div>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Software Engineer</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>5/2014 &#8210 9/2017</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Software and Algorithm Engineer. Developing map-navigation app for smartphones.
-												C++, Java (Android), JavaEE, Objective-C (iOS), C#.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-
-							<!-- ----- ANATHEMA ----- -->
-							<div class="timeline-item">
-								<div class="timeline-point timeline-point"></div>
-								<div class="timeline-event">
-									<div class="widget shadow-sm">
-										<div class="widget-header d-flex align-items-center">
-											<div class="user-image">
-												<img src="img/professional_logo_wow.png">
-											</div>
-											<div class="d-flex flex-column mr-auto">
-												<div class="title">
-													<h5>World of Warcraft game server, Prague, Czechia</h5>
-												</div>
-											</div>
-										</div>
-
-										<div class="widget-body d-flex align-items-center">
-											<div class="col-xl-8 col-md-8 col-7 pl-0 no-padding d-flex justify-content-start">
-												<h6>Software Engineer</h6>
-											</div>
-											<div class="col-xl-4 col-md-4 col-5 pr-0 no-padding d-flex justify-content-end">
-												<h6>2/2013 &#8210 5/2014</h6>
-											</div>
-										</div>
-
-										<div class="widget-footer">
-											<p> Software and Algorithm Engineer. The World of Warcraft game server. Extending game mechanics, 
-												scripting artificial intelligence, data-mining. C++, C#.</p>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-
-
-
-							<span class="timeline-label">
-								<span class="label bg-secondary">2013</span>
-							</span>
+				<!-- Valka.ai -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-rose-600 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_valka.svg" alt="Valka.ai" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Valka.ai, Los Angeles, California</h3>
 						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Head of Research</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">4/2025 &ndash; present</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Leading a 20+ person research team advancing photorealistic neural rendering, generative speech and audio, human motion modeling and human-object interactions, and world models for long-horizon scene understanding and generation.</p>
 					</div>
+				</div>
+
+				<!-- HeyGen -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_heygen.svg" alt="HeyGen" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">HeyGen, Los Angeles, California</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Research Scientist</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">4/2024 &ndash; 3/2025</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Research of core avatar rendering technology. Developed a deferred neural rendering pipeline, shipped several GAN-based models and a novel scheme for rapid training of highly-realistic and expressive avatars, researched transformer-based diffusion models; unlocking multi-million revenue streams.</p>
+					</div>
+				</div>
+
+				<!-- Drip Artificial -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_drip_artificial.png" alt="Drip Artificial" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Drip Artificial, San Francisco, California</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Founding Research Scientist</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">2/2023 &ndash; 4/2024</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">(Rebranded as <a href="https://www.comfy.org/" target="_blank" rel="noopener" class="text-sky-600 hover:text-sky-500 dark:text-sky-400">comfy.org</a>) Leading the research efforts into developing an end-to-end Generative AI framework that allows for creating stylized videos based on a text prompt; in particular, text-to-video synthesis, example-based video style transfer, and propagating edits through the video sequence. Helping to raise a multi-million seed investment round.</p>
+					</div>
+				</div>
+
+				<!-- Samsung Senior -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_samsung.png" alt="Samsung" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Samsung Research America, California</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Senior Research Scientist</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">3/2021 &ndash; 4/2023</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Research and implementation of computer vision and deep learning techniques to render photorealistic virtual humans, focusing on faces. Involved conditional GANs, image-to-image translation networks, deferred neural rendering. Part of the NEON team.</p>
+						<div class="mt-4 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/60 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Research Scientist Intern</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">4/2020 &ndash; 2/2021</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Research and implementation of various image-to-image and video-to-video translation neural networks for face manipulation, e.g., adding makeup, changing skin tone, adding or removing scars or wrinkles. Part of the NEON team.</p>
+					</div>
+				</div>
+
+				<!-- Snap -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_snap.png" alt="Snap" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Snap Inc., Los Angeles, California</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Research Scientist Intern</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">7/2019 &ndash; 10/2019</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Research of new techniques on training generative adversarial networks for style transfer tasks; focused on a scenario where a minimal amount of data is available, and an interactive response is required. Furthermore, developing a shader-based real-time stylization for human portraits.</p>
+					</div>
+				</div>
+
+				<!-- Adobe Remote -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_adobe.jpg" alt="Adobe" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Adobe Research, USA</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Remote Collaboration</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">9/2017 &ndash; 12/2019</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Remote collaboration on several research projects, publications, and tech transfer project. Computer graphics; patch-based style transfer; neural-network-based style transfer.</p>
+						<div class="mt-4 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/60 pt-3 dark:border-white/10">
+							<div class="flex flex-wrap items-baseline gap-x-2">
+								<span class="font-semibold text-slate-700 dark:text-slate-200">Research Scientist Intern</span>
+								<span class="text-sm text-slate-500 dark:text-slate-400">Seattle, Washington</span>
+							</div>
+							<span class="text-sm text-slate-500 dark:text-slate-400">7/2018 &ndash; 10/2018</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Combining neural-network-based and patch-based style transfer methods. Chunk-based style transfer method with focus on a real-time performance.</p>
+						<div class="mt-4 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/60 pt-3 dark:border-white/10">
+							<div class="flex flex-wrap items-baseline gap-x-2">
+								<span class="font-semibold text-slate-700 dark:text-slate-200">Research Scientist Intern</span>
+								<span class="text-sm text-slate-500 dark:text-slate-400">San Jose, California</span>
+							</div>
+							<span class="text-sm text-slate-500 dark:text-slate-400">9/2017 &ndash; 12/2017</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Guiding patch-based style transfer method using convolutional neural networks, image harmonization, and histogram optimization. Integrating developed style transfer method into Adobe Photoshop.</p>
+					</div>
+				</div>
+
+				<!-- Dynavix -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_dynavix.jpg" alt="Dynavix" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Dynavix, Prague, Czechia</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Software Engineer</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">5/2014 &ndash; 9/2017</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Software and Algorithm Engineer. Developing map-navigation app for smartphones. C++, Java (Android), JavaEE, Objective-C (iOS), C#.</p>
+					</div>
+				</div>
+
+				<!-- World of Warcraft -->
+				<div class="relative mb-8">
+					<span class="absolute -left-[41px] top-9 h-4 w-4 rounded-full border-4 border-white bg-sky-500 ring-4 ring-slate-100 dark:border-slate-950 dark:ring-slate-800 sm:-left-[49px]"></span>
+					<div class="rounded-2xl bg-slate-50 p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+						<div class="flex items-center gap-4">
+							<img src="img/professional_logo_wow.png" alt="World of Warcraft" class="h-12 w-12 rounded-lg bg-white object-contain p-1 ring-1 ring-slate-200 dark:ring-white/10">
+							<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">World of Warcraft game server, Prague, Czechia</h3>
+						</div>
+						<div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 border-t border-slate-200/70 pt-3 dark:border-white/10">
+							<span class="font-semibold text-slate-700 dark:text-slate-200">Software Engineer</span>
+							<span class="text-sm text-slate-500 dark:text-slate-400">2/2013 &ndash; 5/2014</span>
+						</div>
+						<p class="mt-3 text-sm leading-relaxed">Software and Algorithm Engineer. The World of Warcraft game server. Extending game mechanics, scripting artificial intelligence, data-mining. C++, C#.</p>
+					</div>
+				</div>
+
+				<div class="inline-block rounded-full bg-slate-800 px-4 py-1 text-sm font-medium text-white dark:bg-slate-700">2013</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= EDUCATION ============================= -->
+	<section id="education" class="scroll-mt-20 bg-slate-100 py-16 dark:bg-slate-900">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Education</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<span class="inline-block rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700">2018 &ndash; 2021</span>
+					<h3 class="mt-4 font-display text-base font-semibold text-slate-900 dark:text-white">Doctoral degree study <br class="hidden xl:block">(PhD)</h3>
+					<p class="mt-1 text-sm">Computer Graphics, <br class="hidden xl:block">FEE, CTU in Prague.</p>
+				</div>
+				<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<span class="inline-block rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700">2016 &ndash; 2018</span>
+					<h3 class="mt-4 font-display text-base font-semibold text-slate-900 dark:text-white">Master degree study <br class="hidden xl:block">(MSc)</h3>
+					<p class="mt-1 text-sm">Computer Science, <br class="hidden xl:block">FIT, CTU in Prague.</p>
+				</div>
+				<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<span class="inline-block rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700">2012 &ndash; 2015</span>
+					<h3 class="mt-4 font-display text-base font-semibold text-slate-900 dark:text-white">Bachelor degree study <br class="hidden xl:block">(BSc)</h3>
+					<p class="mt-1 text-sm">Computer Science, <br class="hidden xl:block">FIT, CTU in Prague.</p>
+				</div>
+				<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<span class="inline-block rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-white dark:bg-slate-700">2004 &ndash; 2012</span>
+					<h3 class="mt-4 font-display text-base font-semibold text-slate-900 dark:text-white">High school</h3>
+					<p class="mt-1 text-sm">Mathematics, Physics, and Descriptive Geometry, Gymnasium of Christian Doppler.</p>
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		<!-- Container (Education Section) -->
-		<div id="education" class="container-fluid bg-grey">
-			<div class="container py-3">
-				<h2 class="text-center text-md-left pb-3">Education</h2>
-				
-				<div class="row">
-					<div class="col-lg-12">
+	</section>
 
-						<div class="hori-timeline" dir="ltr">
-							<ul class="list-inline events">
-								<li class="list-inline-item event-list">
-									<div class="px-4">
-										<div class="event-date bg-secondary text-light">2018 &#8210 2021</div>
-										<h5 class="pt-2 pt-lg-0">Doctoral degree study (PhD)</h5>
-										<p class="mb-2">Computer Graphics, <br class="d-none d-xl-block">FEE, CTU in Prague.</p>
-									</div>
-								</li>
-								<li class="list-inline-item event-list">
-									<div class="px-4">
-										<div class="event-date bg-secondary text-light">2016 &#8210 2018</div>
-										<h5 class="pt-2 pt-lg-0">Master degree study (MSc)</h5>
-										<p class="mb-2">Computer Science, <br class="d-none d-xl-block">FIT, CTU in Prague.</p>
-									</div>
-								</li>
-								<li class="list-inline-item event-list">
-									<div class="px-4">
-										<div class="event-date bg-secondary text-light">2012 &#8210 2015</div>
-										<h5 class="pt-2 pt-lg-0">Bachelor degree study (BSc)</h5>
-										<p class="mb-2">Computer Science, <br class="d-none d-xl-block">FIT, CTU in Prague.</p>
-									</div>
-								</li>
-								<li class="list-inline-item event-list">
-									<div class="px-4">
-										<div class="event-date bg-secondary text-light">2004 &#8210 2012</div>
-										<h5 class="pt-2 pt-lg-0">High school</h5>
-										<p class="mb-2">Mathematics, Physics, and Descriptive Geometry, Gymnasium of Christian Doppler.</p>
-									</div>
-								</li>
-							</ul>
-						</div>
+	<!-- ============================= FOOTER ============================= -->
+	<footer class="bg-white py-10 text-center dark:bg-slate-950">
+		<p class="text-sm text-slate-400 dark:text-slate-500">© Ondrej Texler</p>
+	</footer>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
+	<!-- Reusable component classes -->
+	<style>
+		.pub-chip {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			border-radius: 9999px;
+			border: 1px solid rgb(226 232 240);
+			padding: 0.3rem 0.75rem;
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: rgb(51 65 85);
+			transition: all 0.15s ease;
+		}
+		.pub-chip:hover {
+			border-color: #38bdf8; /* sky-400 */
+			color: #0284c7;        /* sky-600 */
+			background-color: #f0f9ff; /* sky-50 */
+		}
+		.dark .pub-chip {
+			border-color: rgba(255,255,255,0.12);
+			color: rgb(203 213 225);
+		}
+		.dark .pub-chip:hover {
+			border-color: #0ea5e9; /* sky-500 */
+			color: #38bdf8;        /* sky-400 */
+			background-color: rgba(14,165,233,0.08); /* sky-500 @ 8% */
+		}
+	</style>
 
+	<script>
+		// Theme toggle
+		function toggleTheme() {
+			var isDark = document.documentElement.classList.toggle('dark');
+			try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+		}
+		document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+		document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
-		<!-- Footer -->
-		<footer class="container-fluid text-center my-4">
-			<a href="#" title="To Top">
-				<i class="fas fa-chevron-up text-dark icon-scale" style="font-size:30px"></i>
-			</a>
-		</footer>
-		
+		// Mobile menu
+		var menuToggle = document.getElementById('menuToggle');
+		var mobileMenu = document.getElementById('mobileMenu');
+		menuToggle.addEventListener('click', function () {
+			mobileMenu.classList.toggle('hidden');
+		});
+		document.querySelectorAll('.mobile-link').forEach(function (link) {
+			link.addEventListener('click', function () { mobileMenu.classList.add('hidden'); });
+		});
 
-	</body>
+		// News show more / less
+		var newsList = document.getElementById('newsList');
+		var newsToggle = document.getElementById('newsToggle');
+		newsToggle.addEventListener('click', function () {
+			var collapsed = newsList.classList.toggle('collapsed');
+			this.querySelector('[data-label]').textContent = collapsed ? 'Show more' : 'Show less';
+			this.querySelector('[data-chevron]').style.transform = collapsed ? 'rotate(0deg)' : 'rotate(180deg)';
+		});
+	</script>
+
+</body>
 </html>
