@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145182620-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-145182620-1');
+	</script>
+
+	<title>Hiring — Ondrej Texler</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Open research roles on Ondrej Texler's team at Valka.ai — neural rendering, generative audio, human motion modeling, and world models.">
+
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+	<!-- Prevent flash of wrong theme -->
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (stored === 'dark' || (!stored && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {}
+		})();
+	</script>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+						display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+					},
+				},
+			},
+		};
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<style>
+		body { font-family: 'Inter', sans-serif; }
+		h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+	</style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300 selection:bg-sky-200 selection:text-sky-900 dark:selection:bg-sky-800 dark:selection:text-white">
+
+	<span id="top" class="absolute top-0"></span>
+
+	<!-- ============================= NAVBAR ============================= -->
+	<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-slate-950/80">
+		<nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+			<a href="../index.html" class="font-display text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+				Ondrej<span class="text-sky-500"> Texler</span>
+			</a>
+
+			<a href="https://valka.ai/" target="_blank" rel="noopener" title="Valka.ai"
+			   class="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transition hover:opacity-80 sm:block">
+				<img src="../img/professional_logo_valka.svg" alt="Valka.ai" class="h-6 w-auto dark:brightness-0 dark:invert">
+			</a>
+
+			<button id="themeToggle" type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 transition hover:border-sky-400 hover:text-sky-500 dark:border-white/10 dark:text-slate-300 dark:hover:text-sky-400">
+				<i class="fas fa-moon dark:hidden"></i>
+				<i class="fas fa-sun hidden dark:block"></i>
+			</button>
+		</nav>
+	</header>
+
+	<!-- ============================= HERO ============================= -->
+	<section class="relative isolate overflow-hidden pt-16">
+		<div class="absolute inset-0 -z-10">
+			<img src="../img/jumbotron_bg9.jpg" alt="" class="h-full w-full object-cover">
+			<div class="absolute inset-0 bg-slate-950/70"></div>
+		</div>
+
+		<div class="mx-auto max-w-4xl px-5 py-16 text-center text-white sm:py-20">
+			<a href="https://valka.ai/" target="_blank" rel="noopener" title="Valka.ai" class="mb-6 block sm:hidden">
+				<img src="../img/professional_logo_valka.svg" alt="Valka.ai" class="mx-auto h-7 w-auto brightness-0 invert">
+			</a>
+			<span class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
+				<i class="fas fa-briefcase text-[11px]"></i> We're hiring
+			</span>
+			<h1 class="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">Join my research team</h1>
+			<p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-200">
+				I'm building a world-class research team at
+				<a href="https://valka.ai/" target="_blank" rel="noopener" class="font-medium text-sky-300 hover:text-sky-200">Valka.ai</a>
+				to tackle problems that have never been solved before — from photorealistic neural rendering to generative
+				audio, human motion modeling, and world models. If you love hard research problems and shipping real systems,
+				I'd love to hear from you.
+			</p>
+			<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+				<a href="#roles" class="inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-sky-400">
+					See open roles <i class="fas fa-arrow-down text-xs"></i>
+				</a>
+				<a href="#apply" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur transition hover:bg-white/20">
+					How to apply
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= INTRO / WHY ============================= -->
+	<section class="bg-white py-16 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-8 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Why join</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+			<!-- TODO: replace with your own pitch -->
+			<div class="grid gap-6 sm:grid-cols-3">
+				<div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+					<i class="fas fa-flask mb-3 text-xl text-sky-500"></i>
+					<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Frontier research</h3>
+					<p class="mt-1 text-sm">Work on genuinely unsolved problems in neural rendering, generative AI, and world models.</p>
+				</div>
+				<div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+					<i class="fas fa-rocket mb-3 text-xl text-sky-500"></i>
+					<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Real impact</h3>
+					<p class="mt-1 text-sm">Ship research into products used by millions — not papers that sit on a shelf.</p>
+				</div>
+				<div class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-white/10">
+					<i class="fas fa-people-group mb-3 text-xl text-sky-500"></i>
+					<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">Exceptional team</h3>
+					<p class="mt-1 text-sm">Join 20+ scientists and engineers collaborating with leading universities.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= ROLES ============================= -->
+	<section id="roles" class="scroll-mt-20 bg-slate-100 py-16 dark:bg-slate-900">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-8 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Open roles</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<div class="space-y-6">
+
+				<!-- Role 1 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist - World Models (Video Understanding and Rendering)</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Intern</span>
+					</div>
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Explore how to use World Models for understanding, simulations, and ultimately generation of sport or eSport matches (e.g., soccer, DOTA).</li>
+						<li>Design, develop, and optimize AI video generation models, with a particular focus on World Models; experiment with cutting-edge autoregressive architectures.</li>
+						<li>Develop and implement state-of-the-art algorithms for synthesizing sport matches.</li>
+						<li>Work closely with other teams on large-scale video-action datasets, design and implement a complex data-cleaning and data pre-processing pipeline.</li>
+						<li>Define robust validation strategies and implement custom evaluation metrics comparing synthetic vs. real gameplay.</li>
+						<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, ICML, ICCV, and help to align it with our roadmap.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+						<li>Published at top Computer Vision, AI, or Graphics venues (e.g., CVPR, ICML, ICCV, SIGGRAPH, NeurIPS).</li>
+						<li>Demonstrated hands-on experience with building and running generative CV models (e.g., GANs, DiT, VAE).</li>
+						<li>Solid understanding of neural architectures and paradigms (e.g., Transformers, Denoising Diffusion Models, RNNs, Sequence Models, CNNs).</li>
+						<li>Solid understanding of VAEs (e.g., ELBO).</li>
+						<li>Basic understanding of Reinforcement Learning.</li>
+						<li>Proficiency in Python and PyTorch.</li>
+					</ul>
+				</article>
+
+				<!-- Role 2 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist - Sequence Modeling (World Models)</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Intern</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Develop models for real-game simulations for esports (e.g., CS2, Dota2, LoL) as well as classical sports (e.g., soccer).</li>
+						<li>Model generating of long-horizon complex sequence of game events.</li>
+						<li>Explore various ML techniques (Transformers, AR-based techniques, RL, or other sequence modeling methods).</li>
+						<li>Focus research on realistic player behavior, team dynamics, and overall match flow.</li>
+						<li>Define robust validation strategies to compare synthetic gameplay against real match data and build custom evaluation metrics.</li>
+						<li>Handle large datasets, build efficient training and inference pipelines.</li>
+						<li>Stay on the bleeding edge of the relevant literature, e.g., NeurIPS, ICML, ICLR, and help to align it with our roadmap.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+						<li>Demonstrated hands-on experience with sequence modeling.</li>
+						<li>Strong research background in NLP or sequence modeling demonstrated by having publications at top tier conferences such as NeurIPS, ICML, ICLR, CVPR, or ICCV.</li>
+						<li>Proficiency in Python and PyTorch.</li>
+						<li>Solid understanding of neural architectures or paradigms (CNNs, Transformers, diffusion models, autoregressive models etc.).</li>
+					</ul>
+				</article>
+
+				<!-- Role 3 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist - Sports Simulation</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Intern</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Design, develop, and optimize 3D and 4D models for realistic simulation of sports matches, including players, equipment, playing surfaces, stadium environments, and dynamic interactions.</li>
+						<li>Explore state-of-the-art 3D scene representations and neural rendering techniques (e.g., 3D and dynamic Gaussian Splatting, NeRF, mesh, or hybrid approaches).</li>
+						<li>Develop simulation pipelines that translate game states, trajectories, and match events into spatially and temporally consistent 3D scenes with physically plausible player motion, ball or object trajectories, contacts, occlusions, camera motion, and multi-agent interactions.</li>
+						<li>Work closely with the sequence-modeling and video-rendering teams while building scalable data-processing, training, reconstruction, and rendering pipelines for large-scale sports datasets.</li>
+						<li>Define robust validation strategies and custom metrics across geometry, motion, physics, temporal consistency, and visual realism.</li>
+						<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS, and ICML.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Pursuing or having PhD in Computer Vision, Machine Learning, Computer Graphics, Robotics, or a closely related field.</li>
+						<li>Demonstrated hands-on experience with 3D vision, neural rendering, dynamic scene reconstruction, or learned simulation.</li>
+						<li>Strong research background demonstrated by publications at top-tier conferences such as CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS, or ICML.</li>
+						<li>Solid understanding of 3D scene representations and rendering techniques, such as Gaussian Splatting, NeRFs, meshes, point-based representations, and differentiable rendering.</li>
+						<li>Experience with multi-view geometry, camera calibration, tracking, human reconstruction, motion estimation, or physics-based simulation.</li>
+						<li>Proficiency in Python and PyTorch.</li>
+						<li>Experience with sports data, player tracking, motion capture, or multi-agent environments is a strong plus.</li>
+					</ul>
+				</article>
+
+				<!-- Role 4 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist - Video / DiT Rendering</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Intern</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Design, develop, and optimize AI video generation models using diffusion techniques, with a focus on maintaining consistency, realism, and style.</li>
+						<li>Research state-of-the-art video models for generating human-centric videos in real-time.</li>
+						<li>Work closely with other teams on large-scale video datasets, including human motion and gestures, facial expressions, and scene context.</li>
+						<li>Experiment with cutting-edge diffusion architectures for controllable and high-quality video synthesis.</li>
+						<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, ICML, ICCV, and help to align it with our roadmap.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+						<li>Demonstrated hands-on experience with research of video diffusion models.</li>
+						<li>Strong research background in image or video synthesis demonstrated by having publications at top tier conferences such as CVPR, NeurIPS, ICCV, SIGGRAPH, and ICML.</li>
+						<li>Experience with real time video generation is a big plus.</li>
+						<li>Proficiency in Python and ML frameworks such as PyTorch.</li>
+						<li>Solid understanding of neural architectures or paradigms (CNNs, Transformers, diffusion models, autoregressive models etc.).</li>
+					</ul>
+				</article>
+
+				<!-- Role 5 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist - Motion Modeling</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Intern</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Design, develop, and optimize AI models to generate realistic motion of human bodies (e.g., realistic head motion, lips motion, hand gestures).</li>
+						<li>With a particular focus on hand-object interaction and manipulation.</li>
+						<li>Work closely with the video rendering team.</li>
+						<li>Experiment with cutting-edge architectures for controllable and high-quality motion synthesis, e.g., diffusion-based and AR-based techniques.</li>
+						<li>Define robust validation strategies and implement custom evaluation metrics.</li>
+						<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, SIGGRAPH, ICML, ICCV, and help to align it with our roadmap.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+						<li>Hands-on experience with research of generative motion modeling such as motion diffusion, or VQ-VAE based approaches.</li>
+						<li>Strong research background in motion modeling demonstrated by having publications at top tier conferences such as CVPR, NeurIPS, ICCV, SIGGRAPH, and ICML.</li>
+						<li>Proficiency in Python and ML frameworks such as PyTorch.</li>
+						<li>Solid understanding of neural architectures or paradigms (CNNs, LSTM, Transformers, diffusion models, autoregressive models etc.).</li>
+					</ul>
+				</article>
+
+				<!-- Role 6 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Engineer, Text-to-Speech</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within Europe &amp; US East Coast</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Full-time</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Combine results from different experiments into one TTS pipeline, evaluate, ensure model compatibility with other pipelines and the technical requirements, help with demos and cooperate with engineering on deployment of these models.</li>
+						<li>Provide engineering support to research, training, and inference of SOTA TTS models for realistic and emotional voice generation for entertainment and education applications.</li>
+						<li>Track our trained TTS models, assemble the results of the best experiments into one speech production system, evaluate the model performance and quality.</li>
+						<li>Closely collaborate with TTS researcher team, closely cooperate with product engineering and platform teams to ensure smooth deployment.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Experience working with ML models in production (e.g., model formats, quantization, deployment, hardware requirements, model logging, or tracking).</li>
+						<li>Proficiency in Python and key libraries (e.g., PyTorch, Hugging Face Transformers).</li>
+						<li>Experience with training text-to-speech / voice cloning models, understanding of human speech and audio processing.</li>
+						<li>Solid understanding of neural architectures or paradigms (transformers, diffusion models, GANs, AR models, etc.).</li>
+						<li>Familiarity with modern speech synthesis models (GPT-based, flow matching, such as Vevo, StyleTTS, IndexTTS, Maskgct etc.).</li>
+						<li>Contributions to open-source AI tools.</li>
+						<li>Familiarity with AWS / other cloud providers.</li>
+					</ul>
+				</article>
+
+				<!-- Role 7 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Research Scientist, Text-to-Speech</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within Europe &amp; US East Coast</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Full-time</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Independently translate research papers into experiments, come up with new approaches and conduct model training.</li>
+						<li>Research and train fast and quality SOTA TTS models for realistic and emotional voice generation for entertainment and education applications.</li>
+						<li>Experimenting with different architectures / data to improve the quality and speed of the TTS model(s) and put the best results to production.</li>
+						<li>Staying up to date with current research and coming up with new ideas.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Demonstrated hands-on experience with training text-to-speech / voice cloning models.</li>
+						<li>Solid knowledge of transformers, diffusion models, GANs.</li>
+						<li>Understanding of human speech and audio processing (e.g., sampling, spectrograms, vocoders).</li>
+						<li>Proficiency in Python and key libraries (e.g., PyTorch, Hugging Face Transformers).</li>
+						<li>Ability to keep up to date with research, understand papers, implement approaches; strong ML fundamentals and critical thinking.</li>
+						<li>Familiarity with modern speech synthesis models (GPT-based, flow matching, such as Vevo, StyleTTS, IndexTTS, Maskgct etc.).</li>
+						<li>Contributions to open-source AI tools or research publications in Speech processing field.</li>
+					</ul>
+				</article>
+
+				<!-- Role 8 -->
+				<article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-950 dark:ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-3">
+						<h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Python Research Engineer</h3>
+						<a href="#apply" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400">Apply <i class="fas fa-arrow-right text-[10px]"></i></a>
+					</div>
+					<div class="mt-3 flex flex-wrap gap-2 text-xs">
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-location-dot mr-1"></i>Remote within US &amp; Canada</span>
+						<span class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300"><i class="fas fa-clock mr-1"></i>Full-time</span>
+					</div>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Key responsibilities</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Bridging the Video Generation research team and the product engineering platform team.</li>
+						<li>Taking research models and demos and turning them into robust, deployable, production-ready Python services.</li>
+						<li>Package and containerize AI models (Python/Docker) from research into clean, versioned services with well-defined APIs.</li>
+						<li>Own the engineering side of the tech transfer process: inference specs, environment setup, model mocking, and integration scaffolding.</li>
+						<li>Collaborate closely with research scientists on quantization, TensorRT compilation, and hitting latency budgets (e.g. &lt;200ms real-time response targets).</li>
+						<li>Maintain and operate model services in production, debugging stability and performance issues under load.</li>
+						<li>Contribute to the dual-track delivery model — keeping the engineering platform moving even while research is still iterating.</li>
+					</ul>
+
+					<h4 class="mt-5 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Required qualifications</h4>
+					<ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+						<li>Strong Python engineering skills, writing production-grade and maintainable code.</li>
+						<li>Experience with owning ambiguous model-to-service transfers end-to-end with a high degree of autonomy.</li>
+						<li>Hands-on experience deploying ML/AI models (inference pipelines, serving frameworks).</li>
+						<li>Familiarity with GPU workloads, containerization, and model optimization concepts.</li>
+						<li>Ability to read and work directly with research code and translate it into reliable services.</li>
+						<li>Experience with video/image generation models, TensorRT, or real-time streaming pipelines.</li>
+					</ul>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= APPLY ============================= -->
+	<section id="apply" class="scroll-mt-20 bg-white py-16 dark:bg-slate-950">
+		<div class="mx-auto max-w-3xl px-5 text-center">
+			<img src="../img/professional_logo_valka.svg" alt="Valka.ai" class="mx-auto h-14 w-14 rounded-xl bg-white object-contain p-1.5 ring-1 ring-slate-200 dark:ring-white/10">
+			<h2 class="mt-6 font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">How to apply</h2>
+			<p class="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed">
+				Send me a short note about yourself, what you'd like to work on, and a link to your CV,
+				Google Scholar, or GitHub. Mention the role you're interested in.
+			</p>
+
+			<a href="mailto:ondrej.texler@valka.ai?subject=Hiring"
+			   class="group mx-auto mt-4 flex w-fit max-w-full items-center gap-3 px-5 py-2 sm:px-8">
+				<i class="fas fa-envelope text-lg text-sky-500 sm:text-xl"></i>
+				<span class="break-all font-display text-lg font-bold tracking-tight text-sky-700 group-hover:text-sky-600 dark:text-sky-300 sm:text-lg">ondrej.texler@valka.ai</span>
+			</a>
+		</div>
+	</section>
+
+	<!-- ============================= FOOTER ============================= -->
+	<footer class="border-t border-slate-200/70 bg-slate-50 py-10 text-center dark:border-white/10 dark:bg-slate-950">
+		<a href="../index.html" class="text-sm font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400">← Back to homepage</a>
+		<p class="mt-4 text-sm text-slate-400 dark:text-slate-500">© Ondrej Texler</p>
+	</footer>
+
+	<script>
+		function toggleTheme() {
+			var isDark = document.documentElement.classList.toggle('dark');
+			try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+		}
+		document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+	</script>
+
+</body>
+</html>
