@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145182620-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-145182620-1');
+	</script>
+
+	<title>Research at ValkaAI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The ValkaAI research team — photorealistic neural rendering, generative audio, human motion modeling, and world models. Meet the team and explore open roles.">
+
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+	<!-- Prevent flash of wrong theme -->
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (stored === 'dark' || (!stored && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {}
+		})();
+	</script>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+						display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+					},
+				},
+			},
+		};
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<style>
+		body { font-family: 'Inter', sans-serif; }
+		h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+		.no-scrollbar::-webkit-scrollbar { display: none; }
+		.no-scrollbar { scrollbar-width: none; }
+		.grid-bg {
+			background-image:
+				linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px),
+				linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px);
+			background-size: 48px 48px;
+		}
+		details > summary { list-style: none; }
+		details > summary::-webkit-details-marker { display: none; }
+		details[open] .chev { transform: rotate(180deg); }
+		.nav-link.active { color: rgb(14 165 233); }
+		.nav-link.active::after { opacity: 1; }
+	</style>
+</head>
+
+<body class="bg-slate-50 text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300 selection:bg-sky-200 selection:text-sky-900 dark:selection:bg-sky-800 dark:selection:text-white">
+
+	<span id="top" class="absolute top-0"></span>
+
+	<!-- ============================= NAVBAR ============================= -->
+	<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-slate-950/80">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+			<a href="#top" class="flex shrink-0 items-center gap-2 transition hover:opacity-80" title="Research at ValkaAI">
+				<img src="../img/professional_logo_valka.svg" alt="ValkaAI" class="h-6 w-auto dark:brightness-0 dark:invert">
+				<span class="font-display text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">Research</span>
+			</a>
+
+			<div class="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex">
+				<a href="#about" class="nav-link relative transition hover:text-sky-500">About</a>
+				<a href="#leadership" class="nav-link relative transition hover:text-sky-500">Leadership</a>
+				<a href="#advisors" class="nav-link relative transition hover:text-sky-500">Advisors</a>
+				<a href="#directions" class="nav-link relative transition hover:text-sky-500">Directions</a>
+				<a href="#join" class="nav-link relative transition hover:text-sky-500">Join us</a>
+			</div>
+
+			<button id="themeToggle" type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-slate-200 text-slate-600 transition hover:border-sky-400 hover:text-sky-500 dark:border-white/10 dark:text-slate-300 dark:hover:text-sky-400">
+				<i class="fas fa-moon dark:hidden"></i>
+				<i class="fas fa-sun hidden dark:block"></i>
+			</button>
+		</nav>
+
+		<!-- Mobile section nav -->
+		<div class="no-scrollbar flex gap-5 overflow-x-auto border-t border-slate-200/70 px-5 py-2 text-sm font-medium text-slate-600 dark:border-white/10 dark:text-slate-300 md:hidden">
+			<a href="#about" class="nav-link shrink-0">About</a>
+			<a href="#leadership" class="nav-link shrink-0">Leadership</a>
+			<a href="#advisors" class="nav-link shrink-0">Advisors</a>
+			<a href="#directions" class="nav-link shrink-0">Directions</a>
+			<a href="#join" class="nav-link shrink-0">Join us</a>
+		</div>
+	</header>
+
+	<!-- ============================= HERO / ABOUT ============================= -->
+	<section id="about" class="relative isolate scroll-mt-24 overflow-hidden bg-slate-950 pt-28 text-white md:pt-16">
+		<!-- <div class="grid-bg absolute inset-0 -z-10"></div> -->
+		<div class="absolute -left-32 -top-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-sky-500/25 blur-3xl"></div>
+		<div class="absolute -right-24 top-24 -z-10 h-[24rem] w-[24rem] rounded-full bg-purple-600/25 blur-3xl"></div>
+
+		<div class="mx-auto max-w-6xl px-5 pb-9 pt-12 sm:pt-20">
+			<div class="flex items-center gap-4">
+				<p class="font-display text-sm font-semibold uppercase tracking-[0.2em] text-sky-300 sm:text-xl">Research at Valka AI</p>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+			<h1 class="mt-5 text-lg leading-relaxed text-slate-200 sm:text-xl">
+				The <a href="https://valka.ai/" target="_blank" rel="noopener" class="font-medium text-sky-300 underline decoration-sky-300/40 underline-offset-4 hover:text-sky-200">ValkaAI</a>
+				research team is a multidisciplinary, talent-dense group of over 20 world-class scientists and engineers.
+				We tackle problems that have never been solved before, spanning photorealistic neural rendering, generative audio,
+				human motion modeling, and world models.
+			</h1>
+
+			<figure class="mt-10 border-l-2 border-purple-400 pl-5">
+				<blockquote class="font-display text-2xl font-bold italic leading-tight tracking-tight sm:text-3xl">
+					<span class="bg-gradient-to-r from-sky-300 to-purple-400 bg-clip-text pr-2 text-transparent">“We do not feed on easy problems!”</span>
+				</blockquote>
+				<figcaption class="mt-4 text-base leading-relaxed text-slate-300">
+					Our mission is to pursue challenges that require moving far beyond the current state-of-the-art;
+					we focus exclusively on deeply difficult problems that, once solved, deliver immense practical and product impact.
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<!-- ============================= LEADERSHIP ============================= -->
+	<section id="leadership" class="scroll-mt-24 bg-white py-9 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Research Leadership</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<div id="leadershipGrid" class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+
+				<!-- Ondrej Texler -->
+				<article class="group flex flex-col overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-square overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/profile_4_web.jpg" alt="Ondrej Texler" loading="lazy" class="h-full w-full origin-bottom scale-[1.12] object-cover object-[center_20%] transition duration-500 group-hover:scale-[1.18]">
+					</div>
+					<div class="flex flex-1 flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Ondrej Texler</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">Head of Research</p>
+						<p class="mt-3 inline-flex w-fit rounded-full bg-sky-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-sky-700 dark:text-sky-300">10+ papers · 15+ patents</p>
+						<p class="mt-2 text-xs text-slate-500 dark:text-slate-400">ex-HeyGen · ex-ComfyUI · ex-Samsung</p>
+						<p class="mt-1 text-xs text-slate-500 dark:text-slate-400"><i class="fas fa-location-dot mr-1"></i>Los Angeles, CA</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://scholar.google.com/citations?hl=en&user=8GxAlSUAAAAJ" target="_blank" rel="noopener" title="Google Scholar" class="transition hover:text-sky-500"><i class="fas fa-graduation-cap"></i></a>
+							<a href="https://www.linkedin.com/in/ondrej-texler/" target="_blank" rel="noopener" title="LinkedIn" class="transition hover:text-sky-500"><i class="fab fa-linkedin"></i></a>
+							<a href="../" title="Homepage" class="transition hover:text-sky-500"><i class="fas fa-house"></i></a>
+						</div>
+					</div>
+				</article>
+
+				<!-- Weipeng Xu -->
+				<article class="group flex flex-col overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-square overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/research/xu.png" alt="Weipeng Xu" loading="lazy" class="h-full w-full origin-[49%_41%] scale-[1.2] object-cover transition duration-500 group-hover:scale-[1.26]">
+					</div>
+					<div class="flex flex-1 flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Weipeng Xu</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">Principal Research Scientist</p>
+						<p class="mt-3 inline-flex w-fit rounded-full bg-sky-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-sky-700 dark:text-sky-300">11k+ citations · h-index 34</p>
+						<p class="mt-2 text-xs text-slate-500 dark:text-slate-400">ex-Meta · ex-Max Planck</p>
+						<p class="mt-1 text-xs text-slate-500 dark:text-slate-400"><i class="fas fa-location-dot mr-1"></i>Pittsburgh, PA</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://scholar.google.de/citations?user=vy8xXDQAAAAJ" target="_blank" rel="noopener" title="Google Scholar" class="transition hover:text-sky-500"><i class="fas fa-graduation-cap"></i></a>
+							<a href="https://www.linkedin.com/in/weipeng-xu/" target="_blank" rel="noopener" title="LinkedIn" class="transition hover:text-sky-500"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</article>
+
+				<!-- Yifan Wang -->
+				<article class="group flex flex-col overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-square overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/research/wang.jpg" alt="Yifan Wang" loading="lazy" class="h-full w-full origin-[41%_31%] scale-[1.7] object-cover transition duration-500 group-hover:scale-[1.78]">
+					</div>
+					<div class="flex flex-1 flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Yifan Wang</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">Lead Research Scientist</p>
+						<p class="mt-3 text-xs text-slate-500 dark:text-slate-400">ex-Samsung</p>
+						<p class="mt-1 text-xs text-slate-500 dark:text-slate-400"><i class="fas fa-location-dot mr-1"></i>Sunnyvale, CA</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://scholar.google.com/citations?user=5dtYnSsAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" class="transition hover:text-sky-500"><i class="fas fa-graduation-cap"></i></a>
+							<a href="https://www.linkedin.com/in/staciewang0630/" target="_blank" rel="noopener" title="LinkedIn" class="transition hover:text-sky-500"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</article>
+
+				<!-- Ekaterina Egorova -->
+				<article class="group flex flex-col overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-square overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/research/egorova.jpg" alt="Ekaterina Egorova" loading="lazy" class="h-full w-full object-cover object-[center_30%] transition duration-500 group-hover:scale-105">
+					</div>
+					<div class="flex flex-1 flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Ekaterina Egorova</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">Lead Research Scientist</p>
+						<p class="mt-3 text-xs text-slate-500 dark:text-slate-400">ex-Seznam.cz</p>
+						<p class="mt-1 text-xs text-slate-500 dark:text-slate-400"><i class="fas fa-location-dot mr-1"></i>Prague, Czechia</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://scholar.google.com/citations?user=ELnEwdgAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" class="transition hover:text-sky-500"><i class="fas fa-graduation-cap"></i></a>
+							<a href="https://www.linkedin.com/in/eegorova1/" target="_blank" rel="noopener" title="LinkedIn" class="transition hover:text-sky-500"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= ADVISORS ============================= -->
+	<section id="advisors" class="scroll-mt-24 bg-white py-9 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Academic Advisors &amp; Collaborators</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<!-- Each card spans two leadership columns: photo in one, text in the other -->
+			<div class="grid gap-4 sm:gap-6 md:grid-cols-2">
+
+				<!-- Lukas Tencer -->
+				<article class="group grid grid-cols-2 overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-[4/3] h-full w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/research/tencer.webp" alt="Lukas Tencer" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+					</div>
+					<div class="flex flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Lukas Tencer</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">Research Advisor</p>
+						<p class="mt-3 text-xs text-slate-500 dark:text-slate-400">ex-Director at Google</p>
+						<p class="mt-1 text-xs text-slate-500 dark:text-slate-400">ex-Director at Twitch</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://www.linkedin.com/in/lukastencer/" target="_blank" rel="noopener" title="LinkedIn" class="transition hover:text-sky-500"><i class="fab fa-linkedin"></i></a>
+						</div>
+					</div>
+				</article>
+
+				<!-- Yajie Zhao -->
+				<article class="group grid grid-cols-2 overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl hover:ring-sky-400/50 dark:bg-slate-900 dark:ring-white/10">
+					<div class="aspect-[4/3] h-full w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+						<img src="../img/research/zhao.jpg" alt="Prof. Yajie Zhao" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
+					</div>
+					<div class="flex flex-col p-4 sm:p-5">
+						<h3 class="font-display text-base font-semibold text-slate-900 dark:text-white sm:text-lg">Prof. Yajie Zhao</h3>
+						<p class="text-sm font-medium text-sky-600 dark:text-sky-400">University collaboration</p>
+						<p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Director of the Vision and Graphics Lab (VGL) at USC</p>
+						<div class="mt-auto flex gap-3 pt-4 text-slate-400">
+							<a href="https://www.yajie-zhao.com/" target="_blank" rel="noopener" title="Homepage" class="transition hover:text-sky-500"><i class="fas fa-house"></i></a>
+							<a href="https://vgl.ict.usc.edu/" target="_blank" rel="noopener" title="Vision and Graphics Lab" class="transition hover:text-sky-500"><i class="fas fa-flask"></i></a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= RESEARCH DIRECTIONS ============================= -->
+	<!-- TODO: replace the gradient placeholders with project videos / GIFs, e.g.
+	     <video src="../img/research/dit.mp4" autoplay muted loop playsinline class="h-full w-full object-cover"></video> -->
+	<section id="directions" class="scroll-mt-24 bg-white py-9 dark:bg-slate-950">
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-slate-900 dark:text-white">Research Directions</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+				<article class="flex flex-col overflow-hidden rounded-2xl ring-1 ring-slate-200/70 dark:ring-white/10 md:col-span-2 lg:col-span-4 lg:flex-row">
+					<div class="relative aspect-video overflow-hidden bg-slate-900 lg:w-2/3 lg:shrink-0">
+						<video src="res/dit_rendering.mp4" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
+					</div>
+					<div class="flex flex-1 flex-col p-6 lg:justify-center lg:p-8">
+						<div class="flex flex-wrap gap-2">
+							<span class="rounded-full bg-purple-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-purple-700 dark:text-purple-300">3 patents pending</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Human-centric Video Rendering via DiT</h3>
+						<p class="mt-2 text-sm leading-relaxed">Diffusion-Transformer-based synthesis of photorealistic human video with pixel-precise spatial conditioning.</p>
+					</div>
+				</article>
+
+				<article class="flex flex-col overflow-hidden rounded-2xl ring-1 ring-slate-200/70 dark:ring-white/10">
+					<div class="relative aspect-video overflow-hidden bg-black">
+						<video src="res/motion_modeling.mp4" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<div class="flex flex-wrap gap-2">
+							<span class="rounded-full bg-purple-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-purple-700 dark:text-purple-300">1 patent pending</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Human Motion Modeling</h3>
+						<p class="mt-2 text-sm leading-relaxed">Generative modeling of full-body motion, with emphasis on hand–object interaction.</p>
+					</div>
+				</article>
+
+				<article class="flex flex-col overflow-hidden rounded-2xl ring-1 ring-slate-200/70 dark:ring-white/10">
+					<div class="relative aspect-video overflow-hidden bg-black">
+						<video src="res/facial_expression.mp4" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<div class="flex flex-wrap gap-2">
+							<span class="rounded-full bg-purple-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-purple-700 dark:text-purple-300">1 patent pending</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Facial Expression Control</h3>
+						<p class="mt-2 text-sm leading-relaxed">Fine-grained, disentangled control of facial expressions in synthesized portrait video.</p>
+					</div>
+				</article>
+
+				<article class="flex flex-col overflow-hidden rounded-2xl ring-1 ring-slate-200/70 dark:ring-white/10">
+					<div class="relative aspect-video overflow-hidden bg-slate-900">
+						<img src="res/world_models.gif" alt="World model simulation of a football match" loading="lazy" class="h-full w-full object-cover">
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">World Models</h3>
+						<p class="mt-2 text-sm leading-relaxed">Long-horizon simulation of complex, multi-agent dynamics via world-model concepts.</p>
+					</div>
+				</article>
+
+				<article class="flex flex-col overflow-hidden rounded-2xl ring-1 ring-slate-200/70 dark:ring-white/10">
+					<div class="relative grid aspect-video place-items-center overflow-hidden bg-gradient-to-br from-indigo-500 via-violet-600 to-fuchsia-700">
+						<div class="grid-bg absolute inset-0 opacity-60"></div>
+						<i class="fas fa-wave-square text-4xl text-white/70"></i>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<div class="flex flex-wrap gap-2">
+							<span class="rounded-full bg-purple-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-purple-700 dark:text-purple-300">1 patent pending</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Emotion-enabled Text-to-Speech</h3>
+						<p class="mt-2 text-sm leading-relaxed">Expressive speech synthesis with explicit control over emotion and prosody.</p>
+					</div>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= JOIN US ============================= -->
+	<section id="join" class="relative isolate scroll-mt-24 overflow-hidden bg-slate-950 pb-20 pt-9 text-slate-300">
+		<!-- <div class="grid-bg absolute inset-0 -z-10"></div> -->
+		<div class="absolute -right-32 -top-32 -z-10 h-[26rem] w-[26rem] rounded-full bg-purple-600/25 blur-3xl"></div>
+
+		<div class="mx-auto max-w-6xl px-5">
+			<div class="mb-10 flex items-center gap-4">
+				<h2 class="font-display text-2xl font-bold uppercase tracking-wide text-white">Join us</h2>
+				<span class="h-px flex-1 bg-gradient-to-r from-sky-400/60 to-transparent"></span>
+			</div>
+
+			<div class="grid gap-12 lg:grid-cols-5">
+
+				<div class="lg:col-span-2">
+					<p class="text-base leading-relaxed">
+						ValkaAI’s research team strives for research efficiency and talent density.
+					</p>
+					<p class="mt-4 text-sm leading-relaxed text-slate-400">
+						As we continuously explore new research avenues, our team is growing. We are always looking for exceptional
+						researchers for full-time and internship roles, and actively seek research collaborations with top U.S. universities.
+					</p>
+
+					<div class="mt-8 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+						<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">How to apply</p>
+						<p class="mt-2 text-sm leading-relaxed">Send a short note about yourself, the role you're interested in, and a link to your CV, Google Scholar, or GitHub.</p>
+						<a href="mailto:ondrej.texler@valka.ai?subject=Research%20at%20ValkaAI" class="mt-4 inline-flex max-w-full items-center gap-2 rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-400">
+							<i class="fas fa-envelope"></i><span class="break-all">ondrej.texler@valka.ai</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="lg:col-span-3">
+					<p class="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">Open roles</p>
+					<div class="divide-y divide-white/10 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10">
+
+						<!-- Role 1 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist – World Models (Video Understanding and Rendering)</h3>
+									<p class="mt-1 text-xs text-slate-400">Intern · Remote within US &amp; Canada</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Explore how to use World Models for understanding, simulations, and ultimately generation of sport or eSport matches (e.g., soccer, DOTA).</li>
+									<li>Design, develop, and optimize AI video generation models, with a particular focus on World Models; experiment with cutting-edge autoregressive architectures.</li>
+									<li>Develop and implement state-of-the-art algorithms for synthesizing sport matches.</li>
+									<li>Work closely with other teams on large-scale video-action datasets, design and implement a complex data-cleaning and data pre-processing pipeline.</li>
+									<li>Define robust validation strategies and implement custom evaluation metrics comparing synthetic vs. real gameplay.</li>
+									<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, ICML, ICCV, and help to align it with our roadmap.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+									<li>Published at top Computer Vision, AI, or Graphics venues (e.g., CVPR, ICML, ICCV, SIGGRAPH, NeurIPS).</li>
+									<li>Demonstrated hands-on experience with building and running generative CV models (e.g., GANs, DiT, VAE).</li>
+									<li>Solid understanding of neural architectures and paradigms (e.g., Transformers, Denoising Diffusion Models, RNNs, Sequence Models, CNNs).</li>
+									<li>Solid understanding of VAEs (e.g., ELBO).</li>
+									<li>Basic understanding of Reinforcement Learning.</li>
+									<li>Proficiency in Python and PyTorch.</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 2 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist – Sequence Modeling (World Models)</h3>
+									<p class="mt-1 text-xs text-slate-400">Intern · Remote within US &amp; Canada</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Develop models for real-game simulations for esports (e.g., CS2, Dota2, LoL) as well as classical sports (e.g., soccer).</li>
+									<li>Model generating of long-horizon complex sequence of game events.</li>
+									<li>Explore various ML techniques (Transformers, AR-based techniques, RL, or other sequence modeling methods).</li>
+									<li>Focus research on realistic player behavior, team dynamics, and overall match flow.</li>
+									<li>Define robust validation strategies to compare synthetic gameplay against real match data and build custom evaluation metrics.</li>
+									<li>Handle large datasets, build efficient training and inference pipelines.</li>
+									<li>Stay on the bleeding edge of the relevant literature, e.g., NeurIPS, ICML, ICLR, and help to align it with our roadmap.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+									<li>Demonstrated hands-on experience with sequence modeling.</li>
+									<li>Strong research background in NLP or sequence modeling demonstrated by having publications at top tier conferences such as NeurIPS, ICML, ICLR, CVPR, or ICCV.</li>
+									<li>Proficiency in Python and PyTorch.</li>
+									<li>Solid understanding of neural architectures or paradigms (CNNs, Transformers, diffusion models, autoregressive models etc.).</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 3 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist – Sports Simulation</h3>
+									<p class="mt-1 text-xs text-slate-400">Intern · Remote within US &amp; Canada</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Design, develop, and optimize 3D and 4D models for realistic simulation of sports matches, including players, equipment, playing surfaces, stadium environments, and dynamic interactions.</li>
+									<li>Explore state-of-the-art 3D scene representations and neural rendering techniques (e.g., 3D and dynamic Gaussian Splatting, NeRF, mesh, or hybrid approaches).</li>
+									<li>Develop simulation pipelines that translate game states, trajectories, and match events into spatially and temporally consistent 3D scenes with physically plausible player motion, ball or object trajectories, contacts, occlusions, camera motion, and multi-agent interactions.</li>
+									<li>Work closely with the sequence-modeling and video-rendering teams while building scalable data-processing, training, reconstruction, and rendering pipelines for large-scale sports datasets.</li>
+									<li>Define robust validation strategies and custom metrics across geometry, motion, physics, temporal consistency, and visual realism.</li>
+									<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS, and ICML.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Pursuing or having PhD in Computer Vision, Machine Learning, Computer Graphics, Robotics, or a closely related field.</li>
+									<li>Demonstrated hands-on experience with 3D vision, neural rendering, dynamic scene reconstruction, or learned simulation.</li>
+									<li>Strong research background demonstrated by publications at top-tier conferences such as CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS, or ICML.</li>
+									<li>Solid understanding of 3D scene representations and rendering techniques, such as Gaussian Splatting, NeRFs, meshes, point-based representations, and differentiable rendering.</li>
+									<li>Experience with multi-view geometry, camera calibration, tracking, human reconstruction, motion estimation, or physics-based simulation.</li>
+									<li>Proficiency in Python and PyTorch.</li>
+									<li>Experience with sports data, player tracking, motion capture, or multi-agent environments is a strong plus.</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 4 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist – Video / DiT Rendering</h3>
+									<p class="mt-1 text-xs text-slate-400">Intern · Remote within US &amp; Canada</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Design, develop, and optimize AI video generation models using diffusion techniques, with a focus on maintaining consistency, realism, and style.</li>
+									<li>Research state-of-the-art video models for generating human-centric videos in real-time.</li>
+									<li>Work closely with other teams on large-scale video datasets, including human motion and gestures, facial expressions, and scene context.</li>
+									<li>Experiment with cutting-edge diffusion architectures for controllable and high-quality video synthesis.</li>
+									<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, ICML, ICCV, and help to align it with our roadmap.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+									<li>Demonstrated hands-on experience with research of video diffusion models.</li>
+									<li>Strong research background in image or video synthesis demonstrated by having publications at top tier conferences such as CVPR, NeurIPS, ICCV, SIGGRAPH, and ICML.</li>
+									<li>Experience with real time video generation is a big plus.</li>
+									<li>Proficiency in Python and ML frameworks such as PyTorch.</li>
+									<li>Solid understanding of neural architectures or paradigms (CNNs, Transformers, diffusion models, autoregressive models etc.).</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 5 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist – Motion Modeling</h3>
+									<p class="mt-1 text-xs text-slate-400">Intern · Remote within US &amp; Canada</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Design, develop, and optimize AI models to generate realistic motion of human bodies (e.g., realistic head motion, lips motion, hand gestures).</li>
+									<li>With a particular focus on hand-object interaction and manipulation.</li>
+									<li>Work closely with the video rendering team.</li>
+									<li>Experiment with cutting-edge architectures for controllable and high-quality motion synthesis, e.g., diffusion-based and AR-based techniques.</li>
+									<li>Define robust validation strategies and implement custom evaluation metrics.</li>
+									<li>Stay on the bleeding edge of the relevant literature, e.g., CVPR, NeurIPS, SIGGRAPH, ICML, ICCV, and help to align it with our roadmap.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Pursuing or having PhD in Computer Vision, Machine Learning, or a closely related field.</li>
+									<li>Hands-on experience with research of generative motion modeling such as motion diffusion, or VQ-VAE based approaches.</li>
+									<li>Strong research background in motion modeling demonstrated by having publications at top tier conferences such as CVPR, NeurIPS, ICCV, SIGGRAPH, and ICML.</li>
+									<li>Proficiency in Python and ML frameworks such as PyTorch.</li>
+									<li>Solid understanding of neural architectures or paradigms (CNNs, LSTM, Transformers, diffusion models, autoregressive models etc.).</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 6 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Engineer, Text-to-Speech</h3>
+									<p class="mt-1 text-xs text-slate-400">Full-time · Remote within Europe &amp; US East Coast</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Combine results from different experiments into one TTS pipeline, evaluate, ensure model compatibility with other pipelines and the technical requirements, help with demos and cooperate with engineering on deployment of these models.</li>
+									<li>Provide engineering support to research, training, and inference of SOTA TTS models for realistic and emotional voice generation for entertainment and education applications.</li>
+									<li>Track our trained TTS models, assemble the results of the best experiments into one speech production system, evaluate the model performance and quality.</li>
+									<li>Closely collaborate with TTS researcher team, closely cooperate with product engineering and platform teams to ensure smooth deployment.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Experience working with ML models in production (e.g., model formats, quantization, deployment, hardware requirements, model logging, or tracking).</li>
+									<li>Proficiency in Python and key libraries (e.g., PyTorch, Hugging Face Transformers).</li>
+									<li>Experience with training text-to-speech / voice cloning models, understanding of human speech and audio processing.</li>
+									<li>Solid understanding of neural architectures or paradigms (transformers, diffusion models, GANs, AR models, etc.).</li>
+									<li>Familiarity with modern speech synthesis models (GPT-based, flow matching, such as Vevo, StyleTTS, IndexTTS, Maskgct etc.).</li>
+									<li>Contributions to open-source AI tools.</li>
+									<li>Familiarity with AWS / other cloud providers.</li>
+								</ul>
+							</div>
+						</details>
+
+						<!-- Role 7 -->
+						<details class="group">
+							<summary class="flex cursor-pointer items-center gap-4 px-5 py-4 transition hover:bg-white/5">
+								<div class="min-w-0 flex-1">
+									<h3 class="font-display text-[15px] font-semibold text-white">Research Scientist, Text-to-Speech</h3>
+									<p class="mt-1 text-xs text-slate-400">Full-time · Remote within Europe &amp; US East Coast</p>
+								</div>
+								<i class="chev fas fa-chevron-down text-xs text-slate-500 transition"></i>
+							</summary>
+							<div class="p-5 text-sm leading-relaxed">
+								<h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Key responsibilities</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Independently translate research papers into experiments, come up with new approaches and conduct model training.</li>
+									<li>Research and train fast and quality SOTA TTS models for realistic and emotional voice generation for entertainment and education applications.</li>
+									<li>Experimenting with different architectures / data to improve the quality and speed of the TTS model(s) and put the best results to production.</li>
+									<li>Staying up to date with current research and coming up with new ideas.</li>
+								</ul>
+								<h4 class="mt-4 text-xs font-bold uppercase tracking-wider text-sky-400">Required qualifications</h4>
+								<ul class="mt-2 list-disc space-y-1 pl-5">
+									<li>Demonstrated hands-on experience with training text-to-speech / voice cloning models.</li>
+									<li>Solid knowledge of transformers, diffusion models, GANs.</li>
+									<li>Understanding of human speech and audio processing (e.g., sampling, spectrograms, vocoders).</li>
+									<li>Proficiency in Python and key libraries (e.g., PyTorch, Hugging Face Transformers).</li>
+									<li>Ability to keep up to date with research, understand papers, implement approaches; strong ML fundamentals and critical thinking.</li>
+									<li>Familiarity with modern speech synthesis models (GPT-based, flow matching, such as Vevo, StyleTTS, IndexTTS, Maskgct etc.).</li>
+									<li>Contributions to open-source AI tools or research publications in Speech processing field.</li>
+								</ul>
+							</div>
+						</details>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ============================= FOOTER ============================= -->
+	<footer class="border-t border-slate-200/70 bg-slate-50 py-10 text-center dark:border-white/10 dark:bg-slate-950">
+		<a href="../" class="text-sm font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400">← Ondrej Texler's homepage</a>
+		<p class="mt-4 text-sm text-slate-400 dark:text-slate-500">© ValkaAI Research</p>
+	</footer>
+
+	<script>
+		function toggleTheme() {
+			var isDark = document.documentElement.classList.toggle('dark');
+			try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+		}
+		document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+		// Show the leadership cards in a random order on every load
+		(function () {
+			var grid = document.getElementById('leadershipGrid');
+			var cards = Array.prototype.slice.call(grid.children);
+			for (var i = cards.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+			}
+			cards.forEach(function (card) { grid.appendChild(card); });
+		})();
+
+		// Highlight the nav link of the section currently in view
+		(function () {
+			var links = document.querySelectorAll('.nav-link');
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					links.forEach(function (l) {
+						l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id);
+					});
+				});
+			}, { rootMargin: '-40% 0px -55% 0px' });
+			['about', 'leadership', 'advisors', 'directions', 'join'].forEach(function (id) {
+				var el = document.getElementById(id);
+				if (el) observer.observe(el);
+			});
+		})();
+	</script>
+
+</body>
+</html>
